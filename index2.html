@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Garen: El Poder de Demacia</title>
+    <style> 
+        :root {
+            --azul-demacia: #061c32;
+            --dorado-justicia: #c89b3c;
+            --blanco-pureza: #f0e6d2;
+            --negro-fondo: #09111f;
+        }
+
+        body {
+            display: grid;
+            /* Definimos las 3 filas: 
+               1. Header (auto)
+               2. Hero de Garen (100% de la pantalla)
+               3. Contenido (auto) */
+            grid-template-rows: auto 100vh auto;
+            background-color: var(--azul-demacia);
+            color: var(--blanco-pureza);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+        }
+
+        /* 1. SECCIÓN: MENÚ / HEADER */
+        nav {
+            background-color: var(--negro-fondo);
+            border-bottom: 2px solid var(--dorado-justicia);
+            padding: 15px 15px;
+            position: sticky; /* Se queda arriba al bajar */
+            top: 0;
+            z-index: 1000;
+            text-align: left;
+        }
+
+        nav a {
+            color: var(--dorado-justicia);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* 2. SECCIÓN: HERO DE GAREN (Toda la pantalla) */
+        .hero-garen {
+            background: linear-gradient(rgba(0,0,0,0), var(--negro-fondo)), 
+                        url('garen-splash-art-league-of-legends-vs-legends-of-runeterra-v0-q20toudn4og61.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid var(--dorado-justicia);
+        }
+
+        .hero-garen h1 {
+            font-size: clamp(3rem, 10vw, 6rem); /* Se adapta al tamaño de pantalla */
+            color: var(--dorado-justicia);
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(0,0,0,0.9);
+            letter-spacing: 15px;
+        }
+
+        /* 3. SECCIÓN: CONTENIDO */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        section { margin-bottom: 100px; }
+
+        h2 {
+            font-size: 2.5rem;
+            border-left: 8px solid var(--dorado-justicia);
+            padding-left: 20px;
+            color: var(--dorado-justicia);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* Grid de Habilidades */
+        .habilidades-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .habilidad-card { 
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border: 1px solid rgba(200,155,60,0.2);
+            text-align: center;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .habilidad-card:hover {
+            background: rgba(200,155,60,0.05);
+            border-color: var(--dorado-justicia);
+            transform: translateY(-5px);
+        }
+
+        .habilidad-card img {
+            width: 64px;
+            height: 64px;
+            border: 2px solid var(--dorado-justicia);
+            margin-bottom: 15px;
+        }
+
+        .tecla {
+            display: block;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--dorado-justicia);
+            margin-top: 10px;
+        }
+
+        footer{
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid var(--dorado-justicia);
+            color: var(--blanco-pureza);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#hero">Elegir un menu y hacerlo</a>
+    </nav>
+
+    <header class="hero-garen" id="hero">
+        <h1>Garen</h1>
+        <p style="letter-spacing: 8px; font-weight: bold; color: var(--blanco-pureza);">"DEMACIAAAA"</p>
+    </header>
+
+    <div class="container">
+
+        
+        <section id="lore"> 
+            <h2>Conoce a Garen</h2>
+            <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <p>Un soldado orgulloso y noble, 
+                    Garen lidera la Vanguardia Intrépida. 
+                    Es popular entre sus compañeros y goza del respeto de sus enemigos, 
+                    sobre todo por ser descendiente de la prestigiosa familia Crownguard , 
+                    encargada de defender Demacia y sus ideales. 
+                    Ataviado con una armadura resistente a la magia y empuñando una poderosa espada ancha,
+                     Garen está listo para enfrentarse a magos y hechiceros en el campo de batalla, 
+                     en un auténtico torbellino de acero justiciero.</p>
+            </div>
+
+        </section> 
+
+
+        <section id ="Personalidad">
+            <h2>Un ejemplo a seguir</h2>
+            <p>Lorem ipsum</p>
+        </section>
+
+        <Section id ="Niñez">
+            <h2>Infancia</h2>
+            <p>Infancia</p>
+        </Section>
+
+        <section id ="relaciones">
+            <h2>Relaciones</h2>
+            <p>Relaciones</p>
+
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades de Combate</h2>
+            <p>Clickea para ver detalles de cada una</p>
+            <div class="habilidades-grid">
+                 <div class="habilidad-card">
+                    <img src= "Garen_Perseverance.webp" alt="Q">
+                    <h3>Perseverancia</h3>
+                    <p>Regenera salud pasivamente.</p>
+                    <span class="tecla">Tiempo</span>
+                </div>
+                <div class="habilidad-card">
+                    <img src="Garen_Decisive_Strike.webp" alt="Q">
+                    <h3>Golpe Decisivo</h3>
+                    <p>Silencia y castiga.</p>
+                    <span class="tecla">Q</span>
+                </div>
+                <div class="habilidad-card">
+                    <img src="Garen_Courage.webp" alt="W">
+                    <h3>Coraje</h3>
+                    <p>Resistencia pura.</p>
+                    <span class="tecla">W</span>
+                </div>
+                <div class="habilidad-card">
+                    <img src="Garen_Judgment.webp" alt="E">
+                    <h3>Juicio</h3>
+                    <p>Torbellino de acero.</p>
+                    <span class="tecla">E</span>
+                </div>
+                <div class="habilidad-card">
+                    <img src="Garen_Demacian_Justice.webp" alt="R">
+                    <h3>Justicia</h3>
+                    <p>Ejecución divina.</p>
+                    <span class="tecla">R</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Santino Trevisano Garen. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+</body>
+</html> 

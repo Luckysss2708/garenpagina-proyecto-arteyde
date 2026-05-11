@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Garen: El Poder de Demacia</title>
-    <style>
+    <style> 
         :root {
             --azul-demacia: #061c32;
             --dorado-justicia: #c89b3c;
@@ -11,6 +11,8 @@
         }
 
         body {
+            grid-template-columns: 1fr;
+            grid-template-rows: 2px 2fr 1fr;
             background-color: var(--azul-demacia);
             color: var(--blanco-pureza);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,12 +22,17 @@
 
         header {
             text-align: center;
-            padding: 80px 20px;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 0 20px;
             /* Usamos tu splash art como fondo del encabezado */
             background: linear-gradient(rgba(6,28,50,0.6), rgba(6,28,50,0.9)), 
                         url('garen-splash-art-league-of-legends-vs-legends-of-runeterra-v0-q20toudn4og61.webp');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             border-bottom: 5px solid var(--dorado-justicia);
         }
 
