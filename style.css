@@ -1,0 +1,165 @@
+:root {
+            --azul-demacia: #061c32;
+            --dorado-justicia: #c89b3c;
+            --blanco-pureza: #f0e6d2;
+            --negro-fondo: #09111f;
+        }
+
+        body {
+            display: grid;
+            /* Definimos las 3 filas: 
+               1. Header (auto)
+               2. Hero de Garen (100% de la pantalla)
+               3. Contenido (auto) */
+            grid-template-rows: auto 100vh auto;
+            background-color: var(--azul-demacia);
+            color: var(--blanco-pureza);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+        }
+
+        /* 1. SECCIÓN: MENÚ / HEADER */
+        nav {
+            background-color: var(--negro-fondo);
+            border-bottom: 2px solid var(--dorado-justicia);
+            padding: 15px 15px;
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+            text-align: left;
+        }
+
+        nav a {
+            color: var(--dorado-justicia);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .hero-garen {
+            background: linear-gradient(rgba(0,0,0,0), var(--negro-fondo)), 
+                        url('garen-splash-art-league-of-legends-vs-legends-of-runeterra-v0-q20toudn4og61.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid var(--dorado-justicia);
+        }
+
+        .hero-garen h1 {
+            font-size: clamp(3rem, 10vw, 6rem); 
+            color: var(--dorado-justicia);
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(0,0,0,0.9);
+            letter-spacing: 15px;
+        }
+
+        .container {
+            max-width: 1200px; 
+            margin: auto;
+            padding: 10px 20px;
+        }
+
+        section { 
+            border-bottom: 2px solid var(--dorado-justicia);
+            margin-bottom: 20px;
+            margin-top: 80px; 
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            border-left: 8px solid var(--dorado-justicia);
+            padding-left: 20px;
+            color: var(--dorado-justicia);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .habilidades-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .habilidad-card { 
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border: 1px solid rgba(200,155,60,0.2);
+            text-align: center;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .habilidad-card:hover {
+            background: rgba(200,155,60,0.05);
+            border-color: var(--dorado-justicia);
+            transform: translateY(-5px);
+        }
+
+        .habilidad-card img {
+            width: 64px;
+            height: 64px;
+            border: 2px solid var(--dorado-justicia);
+            margin-bottom: 15px;
+        }
+
+        .tecla {
+            display: block;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--dorado-justicia);
+            margin-top: 10px;
+        }
+
+        footer{
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid var(--dorado-justicia);
+            color: var(--blanco-pureza);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .texto-foto-derecha {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 22px;
+            align-items: center;
+        }
+        .texto-foto-izquierda {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .texto-foto-derecha img, 
+        .texto-foto-izquierda img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border: 2px solid var(--dorado-justicia);
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }   
+
+        .cards p {
+            background: rgba(255,255,255,0.03);
+            padding: 20px; 
+            border: 1px solid rgba(200,155,60,0.2);
+            border-radius: 4px;
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .cards strong {
+            color: var(--dorado-justicia);
+        }

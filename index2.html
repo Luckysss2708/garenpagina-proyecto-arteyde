@@ -3,136 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Garen: El Poder de Demacia</title>
-    <style> 
-        :root {
-            --azul-demacia: #061c32;
-            --dorado-justicia: #c89b3c;
-            --blanco-pureza: #f0e6d2;
-            --negro-fondo: #09111f;
-        }
-
-        body {
-            display: grid;
-            /* Definimos las 3 filas: 
-               1. Header (auto)
-               2. Hero de Garen (100% de la pantalla)
-               3. Contenido (auto) */
-            grid-template-rows: auto 100vh auto;
-            background-color: var(--azul-demacia);
-            color: var(--blanco-pureza);
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-        }
-
-        /* 1. SECCIÓN: MENÚ / HEADER */
-        nav {
-            background-color: var(--negro-fondo);
-            border-bottom: 2px solid var(--dorado-justicia);
-            padding: 15px 15px;
-            position: sticky; /* Se queda arriba al bajar */
-            top: 0;
-            z-index: 1000;
-            text-align: left;
-        }
-
-        nav a {
-            color: var(--dorado-justicia);
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-        }
-
-        /* 2. SECCIÓN: HERO DE GAREN (Toda la pantalla) */
-        .hero-garen {
-            background: linear-gradient(rgba(0,0,0,0), var(--negro-fondo)), 
-                        url('garen-splash-art-league-of-legends-vs-legends-of-runeterra-v0-q20toudn4og61.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 2px solid var(--dorado-justicia);
-        }
-
-        .hero-garen h1 {
-            font-size: clamp(3rem, 10vw, 6rem); /* Se adapta al tamaño de pantalla */
-            color: var(--dorado-justicia);
-            text-transform: uppercase;
-            margin: 0;
-            text-shadow: 0 0 20px rgba(0,0,0,0.9);
-            letter-spacing: 15px;
-        }
-
-        /* 3. SECCIÓN: CONTENIDO */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 80px 20px;
-        }
-
-        section { margin-bottom: 100px; }
-
-        h2 {
-            font-size: 2.5rem;
-            border-left: 8px solid var(--dorado-justicia);
-            padding-left: 20px;
-            color: var(--dorado-justicia);
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        /* Grid de Habilidades */
-        .habilidades-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            gap: 30px;
-        }
-
-        .habilidad-card { 
-            background: rgba(255,255,255,0.03);
-            padding: 30px;
-            border: 1px solid rgba(200,155,60,0.2);
-            text-align: center;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .habilidad-card:hover {
-            background: rgba(200,155,60,0.05);
-            border-color: var(--dorado-justicia);
-            transform: translateY(-5px);
-        }
-
-        .habilidad-card img {
-            width: 64px;
-            height: 64px;
-            border: 2px solid var(--dorado-justicia);
-            margin-bottom: 15px;
-        }
-
-        .tecla {
-            display: block;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--dorado-justicia);
-            margin-top: 10px;
-        }
-
-        footer{
-            text-align: center;
-            padding: 20px;
-            border-top: 2px solid var(--dorado-justicia);
-            color: var(--blanco-pureza);
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
@@ -148,10 +19,10 @@
     <div class="container">
 
         
-        <section id="lore"> 
+        <section id="lore" class="cards"> 
             <h2>Conoce a Garen</h2>
-            <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: center;">
-                <div style="flex: 1; min-width: 300px;">
+            <div class="texto-foto-derecha">
+                <div>
                     <p>Un soldado orgulloso y noble, 
                     Garen lidera la Vanguardia Intrépida. 
                     Es popular entre sus compañeros y goza del respeto de sus enemigos, 
@@ -160,24 +31,53 @@
                     Ataviado con una armadura resistente a la magia y empuñando una poderosa espada ancha,
                      Garen está listo para enfrentarse a magos y hechiceros en el campo de batalla, 
                      en un auténtico torbellino de acero justiciero.</p>
+                </div>
+                <div>
+                    <img src="Garen_conVanguardia.webp" alt="FotoGaren">
+                 </div>
             </div>
-
         </section> 
 
-
-        <section id ="Personalidad">
+        <section id ="Personalidad" class="cards">
             <h2>Un ejemplo a seguir</h2>
-            <p>Lorem ipsum</p>
+            <div class="texto-foto-izquierda">
+                <div>
+                    <img src="Garen_Personalidad.png" alt="FotoGaren">
+                </div>
+                <div> 
+                    <p>Garen es un modelo de virtud y honor, siempre dispuesto a sacrificarse por el bienestar de su nación. 
+                    Su lealtad inquebrantable a Demacia y su compromiso con la justicia lo convierten en un líder inspirador para sus compañeros y un adversario temible para sus enemigos.</p>
+                </div>
+            </div>
         </section>
 
-        <Section id ="Niñez">
-            <h2>Infancia</h2>
-            <p>Infancia</p>
+        <Section id ="Niñez" class="cards">
+            <h2>Niñez y Juventud</h2>
+            <div class="texto-foto-derecha">
+                <div>
+                    <p>Garen nació en la ciudad de Alto Silvermere, en el seno de la noble familia Crownguard. Desde temprana edad, mostró un fuerte sentido del deber y una pasión por proteger a los demás. Su infancia estuvo marcada por el entrenamiento riguroso y las expectativas de su linaje, lo que lo preparó para su futuro como defensor de Demacia.</p>
+                </div>
+                <div>
+                    <img src="Garen_bebe.png" alt="FotoGaren">
+                </div>
+            </div>
         </Section>
 
-        <section id ="relaciones">
+        <section id ="relaciones" class="cards">
             <h2>Relaciones</h2>
-            <p>Relaciones</p>
+            <div class="texto-foto-izquierda">
+                <div>
+                    <img src="Garen_ejemplo.jpg" alt="FotoGaren">
+                </div>
+                <div>
+                    <p>Garen mantiene relaciones cercanas con sus compañeros de la Vanguardia Intrépida, especialmente con Lux, su hermana menor, y con Jarvan IV, el príncipe de Demacia. Su vínculo con Lux es especialmente fuerte, ya que ambos comparten un profundo amor por su familia y su nación. Además, Garen tiene una relación de respeto mutuo con otros campeones de Demacia, como Fiora y Xin Zhao.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id ="carrusel" class="cards">
+            <h2>carrucel</h2>
+            <p>Fotos de garem</p> 
 
         </section>
 
