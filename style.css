@@ -79,7 +79,6 @@
             padding-left: 20px;
             color: var(--dorado-justicia);
             margin-bottom: 40px;
-            text-transform: uppercase;
         }
 
         .habilidades-grid {
@@ -95,6 +94,7 @@
             text-align: center;
             border-radius: 4px;
             transition: all 0.3s ease;
+            margin-bottom: 20px;
         }
 
         .habilidad-card:hover {
@@ -162,4 +162,41 @@
 
         .cards strong {
             color: var(--dorado-justicia);
+        }
+
+        #video-container {
+            display: none; /* Escondido por defecto */
+            text-align: center;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        #click-div {
+            cursor: pointer;
+            /* Estilos para que parezca botón */
+        }
+
+        #video-container {
+            display: none; 
+            text-align: center;
+            grid-template-columns: 1fr 1fr; /* Cambia a 1 columna si quieres el texto arriba y video abajo */
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;      
+        }
+
+        #video-container p{
+            padding: 30px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(200,155,60,0.2);
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        
+
+        video {
+            max-width: 100%;
+            height: 300px; /* IMPORTANTE: Cambiar de 100px a auto */
+            border: 2px solid var(--dorado-justicia);
         }

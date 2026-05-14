@@ -81,47 +81,55 @@
 
         </section>
 
-        <section id="habilidades">
+        <section id="habilidades" class="click-div">
             <h2>Habilidades de Combate</h2>
             <p>Clickea para ver detalles de cada una</p>
             <div class="habilidades-grid">
-                 <div class="habilidad-card">
+                 <div class="habilidad-card" id="perseverancia">
                     <img src= "Garen_Perseverance.webp" alt="Q">
                     <h3>Perseverancia</h3>
                     <p>Regenera salud pasivamente.</p>
                     <span class="tecla">Tiempo</span>
                 </div>
-                <div class="habilidad-card">
+                <div class="habilidad-card" id="goledecisivo">
                     <img src="Garen_Decisive_Strike.webp" alt="Q">
                     <h3>Golpe Decisivo</h3>
                     <p>Silencia y castiga.</p>
                     <span class="tecla">Q</span>
                 </div>
-                <div class="habilidad-card">
+                <div class="habilidad-card" id="coraje">
                     <img src="Garen_Courage.webp" alt="W">
                     <h3>Coraje</h3>
                     <p>Resistencia pura.</p>
                     <span class="tecla">W</span>
                 </div>
-                <div class="habilidad-card">
+                <div class="habilidad-card" id="juicio">
                     <img src="Garen_Judgment.webp" alt="E">
                     <h3>Juicio</h3>
                     <p>Torbellino de acero.</p>
                     <span class="tecla">E</span>
                 </div>
-                <div class="habilidad-card">
+                <div class="habilidad-card" id="justicia">
                     <img src="Garen_Demacian_Justice.webp" alt="R">
                     <h3>Justicia</h3>
                     <p>Ejecución divina.</p>
                     <span class="tecla">R</span>
                 </div>
             </div>
-        </section>
+
+            <div id="video-container" style="display: none;">
+                <p id="texto">CACONA</p>
+                <video id="miVideo" width="600" controls>
+                 <source src="tu-video.mp4" type="video/mp4">
+                Tu navegador no soporta videos.</video>
+            </div>
+            
+        </section> 
 
         <footer>
             <p>&copy; 2026 Santino Trevisano Garen. Todos los derechos reservados.</p>
         </footer>
     </div>
-
+    <script src="script.js"></script>
 </body>
 </html> 
