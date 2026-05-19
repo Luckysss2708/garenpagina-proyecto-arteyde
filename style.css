@@ -6,13 +6,17 @@
         }
 
         body {
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            background-color: var(--azul-demacia);
-            color: var(--blanco-pureza);
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-        }
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: var(--azul-demacia);
+    color: var(--blanco-pureza);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    
+    /* AGREGA ESTAS DOS LÍNEAS AQUÍ: */
+    overflow-x: hidden;
+    width: 100vw;
+}
 
         header{
             min-height: 100vh;
@@ -28,6 +32,12 @@
             text-align: left;
         }
 
+        nav a:hover {
+            background: rgba(200,155,60,0.05);
+            border-color: var(--dorado-justicia);
+            transform: translateY(-5px);
+        }
+
         nav a {
             color: var(--dorado-justicia);
             text-decoration: none;
@@ -36,6 +46,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 0.9rem;
+            transition: all 0.3s;
         } 
 
         .hero-garen {
@@ -254,6 +265,127 @@
     .texto-foto-derecha, 
     .texto-foto-izquierda {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 15px;
+    }
+
+    /* 3. Ajustamos las imágenes para que no tengan un alto fijo tan grande en móviles */
+    .texto-foto-derecha img, 
+    .texto-foto-izquierda img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* 4. Separación de secciones más amigable en móviles */
+    section { 
+        margin-top: 60px; 
+    }
+
+    /* 5. Ajustes del menú de navegación para que no se amontone */
+    video {
+        height: auto;
+        max-width: 90%;
+    }
+
+
+    .menu-btn {
+                display: block;
+                float: right;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            nav.abierto{
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                margin: 15px 0;
+            }
+
+            nav.abierto a {
+                display: block;
+                text-align: center;
+                border: 1px solid #c89b3c;
+            }
+
+            .menu-btn {
+
+                display: block;
+                float: right;
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+            }
+
+            /* Estilos específicos para la foto del botón */
+            .menu-btn img {
+                background-color: var(--dorado-justicia);
+                width: 40px;          /* Ajustá el ancho a lo que te guste */
+                height: auto;         /* Evita que se deforme */
+            }
+}
+
+@media (max-width: 480px) {
+    /* 1. Las habilidades pasan a 1 sola columna para que se lea bien */
+    .habilidades-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Grilla de 2 columnas principales */
+        gap: 15px;
+    }
+
+    .habilidad-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+#juicio, #justicia {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Hacemos que la última habilidad (Justicia) ocupe las 2 columnas y quede centrada abajo */
+    #justicia {
+        grid-column: span 2;
+        max-width: 100%;
+    }
+
+    .habilidad-div img {
+            width: 64px;
+            height: 64px;
+            border: 2px solid var(--dorado-justicia);
+            margin-bottom: 15px;
+            display: block;    /* Permite que responda al margen automático */
+            margin-left: auto;  /* Centra horizontalmente */
+            margin-right: auto; /* Centra horizontalmente */
+        }
+
+    body{
+        grid-template-rows: auto auto fr auto;
+    }
+
+    header {
+            min-height: auto; /* Evita el bloque vacío gigante */
+        }
+
+    #hero {
+            background-color: var(--negro-fondo); 
+            background-size: contain;             
+            background-repeat: no-repeat;         
+            background-position: center;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 17 /10; /* Mantiene la proporción horizontal exacta del splash art sin dejar aire arriba ni abajo */
+        }
+    /* 2. Las secciones de historia/Lore pasan a 1 columna (Foto arriba o abajo del texto) */
+    .texto-foto-derecha, 
+    .texto-foto-izquierda {
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: 15px;
     }

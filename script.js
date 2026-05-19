@@ -17,13 +17,14 @@ document.getElementById('goledecisivo').addEventListener('click', function() {
     mostrarVideo('vid/Q.mp4', 'Garen obtiene un aumento de velocidad de movimiento y se libra de todas las ralentizaciones. Su siguiente ataque golpea una zona vital de su enemigo, lo que inflige daño adicional y lo silencia.');
 });
 
-document.getElementById('juicio').addEventListener('click', function() {
-    mostrarVideo('vid/E.mp4', 'Garen aumenta de forma pasiva su armadura y su resistencia mágica al asesinar a enemigos. También puede activar esta habilidad para obtener un escudo y una mejora de tenacidad durante un breve periodo de tiempo, seguido de una reducción de daño menor que dura más.'); 
+document.getElementById('coraje').addEventListener('click', function() {
+    mostrarVideo('vid/W.mp4', 'Garen aumenta de forma pasiva su armadura y su resistencia mágica al asesinar a enemigos. También puede activar esta habilidad para obtener un escudo y una mejora de tenacidad durante un breve periodo de tiempo, seguido de una reducción de daño menor que dura más.'); 
 });
 
-document.getElementById('coraje').addEventListener('click', function() {
-    mostrarVideo('vid/W.mp4', 'Garen hace girar su espada rápidamente a su alrededor e inflige daño físico a los enemigos cercanos.');
+document.getElementById('juicio').addEventListener('click', function() {
+    mostrarVideo('vid/E.mp4', 'Garen hace girar su espada rápidamente a su alrededor e inflige daño físico a los enemigos cercanos.');
 });
+
 
 document.getElementById('justicia').addEventListener('click', function() {
     mostrarVideo('vid/R.mp4', 'Garen invoca el poder de Demacia para intentar ejecutar a un campeón enemigo.');
