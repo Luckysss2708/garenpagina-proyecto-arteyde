@@ -1,234 +1,343 @@
 :root {
-            --azul-demacia: #05182b;
-            --dorado-justicia: #c89b3c;
-            --blanco-pureza: #ffffff;
-            --negro-fondo: #09111f;
-        }
+    --azul-demacia: #05182b;
+    --dorado-justicia: #c89b3c;
+    --blanco-pureza: #ffffff;
+    --negro-fondo: #09111f;
+}
 
-        body {
+body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     background-color: var(--azul-demacia);
     color: var(--blanco-pureza);
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    
-    /* AGREGA ESTAS DOS LÍNEAS AQUÍ: */
     overflow-x: hidden;
     width: 100vw;
 }
 
-        header{
-            min-height: 100vh;
-        }
+header {
+    min-height: 100vh;
+}
 
-        nav {
-            background-color: var(--negro-fondo);
-            border-bottom: 2px solid var(--dorado-justicia);
-            padding: 15px 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            text-align: left;
-        }
+nav {
+    background-color: var(--negro-fondo);
+    border-bottom: 2px solid var(--dorado-justicia);
+    padding: 15px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: left;
+}
 
-        nav a:hover {
-            background: rgba(200,155,60,0.05);
-            border-color: var(--dorado-justicia);
-            transform: translateY(-5px);
-        }
+nav a {
+    color: var(--dorado-justicia);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+} 
 
-        nav a {
-            color: var(--dorado-justicia);
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        } 
+nav a:hover {
+    background: rgba(200,155,60,0.05);
+    border-color: var(--dorado-justicia);
+    transform: translateY(-5px);
+}
 
-        .hero-garen {
-            background: linear-gradient(rgba(0,0,0,0), var(--negro-fondo)), 
-                        url('img/garen-splash-art-league-of-legends-vs-legends-of-runeterra-v0-q20toudn4og61.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 2px solid var(--dorado-justicia);
-        }
+.hero-garen {
+    background: linear-gradient(rgba(0,0,0,0), var(--negro-fondo)), 
+                url('img/garen-splash-art-league-of-legends-vs-legends-of-runeterra-v0-q20toudn4og61.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid var(--dorado-justicia);
+}
 
-        .hero-garen h1 {
-            font-size: clamp(3rem, 10vw, 6rem); 
-            color: var(--dorado-justicia);
-            text-transform: uppercase;
-            margin: 0;
-            text-shadow: 0 0 20px rgba(0,0,0,0.9);
-            letter-spacing: 15px;
-            font-style: italic;
-        }
+.hero-garen h1 {
+    font-size: clamp(3rem, 10vw, 6rem); 
+    color: var(--dorado-justicia);
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 0 0 20px rgba(0,0,0,0.9);
+    letter-spacing: 15px;
+    font-style: italic;
+}
 
-        .container {
-            max-width: 1200px; 
-            margin: auto;
-            padding: 10px 20px;
-        }
+.container {
+    max-width: 1200px; 
+    margin: auto;
+    padding: 10px 20px;
+}
 
-        section { 
-            border-bottom: 2px solid var(--dorado-justicia);
-            margin-bottom: 20px;
-            margin-top: 80px; 
-        }
+section { 
+    border-bottom: 2px solid var(--dorado-justicia);
+    margin-bottom: 20px;
+    margin-top: 80px; 
+}
 
-        h2 {
-            font-size: 2.5rem;
-            font-style: italic;
-            border-left: 8px solid var(--dorado-justicia);
-            padding-left: 20px;
-            color: var(--dorado-justicia);
-            margin-bottom: 40px;
-        }
+h2 {
+    font-size: 2.5rem;
+    font-style: italic;
+    border-left: 8px solid var(--dorado-justicia);
+    padding-left: 20px;
+    color: var(--dorado-justicia);
+    margin-bottom: 40px;
+}
 
-        .habilidades-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            gap: 30px;
-        }
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
 
-        .habilidad-div { 
-            background: rgba(255,255,255,0.03);
-            padding: 30px;
-            border: 1px solid rgba(200,155,60,0.2);
-            text-align: center;
-            border-radius: 4px;
-            transition: all 0.3s;
-            margin-bottom: 20px;
-        }
+.habilidad-div { 
+    background: rgba(255,255,255,0.03);
+    padding: 30px;
+    border: 1px solid rgba(200,155,60,0.2);
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
 
-        .habilidad-div:hover {
-            background: rgba(200,155,60,0.05);
-            border-color: var(--dorado-justicia);
-            transform: translateY(-5px);
-        }
+.habilidad-div:hover {
+    background: rgba(200,155,60,0.05);
+    border-color: var(--dorado-justicia);
+    transform: translateY(-5px);
+}
 
-        .habilidad-div img {
-            width: 64px;
-            height: 64px;
-            border: 2px solid var(--dorado-justicia);
-            margin-bottom: 15px;
-        }
+.habilidad-div img {
+    width: 64px;
+    height: 64px;
+    border: 2px solid var(--dorado-justicia);
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-        .tecla {
-            display: block;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--dorado-justicia);
-            margin-top: 10px;
-        }
+.tecla {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--dorado-justicia);
+    margin-top: 10px;
+}
 
-        footer{
-            text-align: center;
-            padding: 20px;
-            border-top: 2px solid var(--dorado-justicia);
-            color: var(--blanco-pureza);
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid var(--dorado-justicia);
+    color: var(--blanco-pureza);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
-        .texto-foto-derecha {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 22px;
-            align-items: center;
-        }
-        .texto-foto-izquierda {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 22px;
-            align-items: center;
-        }
+.texto-foto-derecha {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 22px;
+    align-items: center;
+}
 
-        .texto-foto-derecha img, 
-        .texto-foto-izquierda img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border: 2px solid var(--dorado-justicia);
-            border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
-        }
+.texto-foto-izquierda {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 22px;
+    align-items: center;
+}
 
-        img {
-            transition: all 0.3s;
-        } 
+.texto-foto-derecha img, 
+.texto-foto-izquierda img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border: 2px solid var(--dorado-justicia);
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
 
-        img:hover {
-            background: rgba(200,155,60,0.05);
-            border-color: var(--dorado-justicia);
-            transform: translateY(-5px);
-        }
+img {
+    transition: all 0.3s;
+} 
 
-        .divs p {
-            background: rgba(255,255,255,0.03);
-            padding: 20px; 
-            border: 1px solid rgba(200,155,60,0.2);
-            border-radius: 4px;
-            margin-bottom: 20px;
-            line-height: 2;
-        }
+img:hover {
+    background: rgba(200,155,60,0.05);
+    border-color: var(--dorado-justicia);
+    transform: translateY(-5px);
+}
 
-        .divs strong {
-            color: var(--dorado-justicia);
-        }
+.divs p {
+    background: rgba(255,255,255,0.03);
+    padding: 20px; 
+    border: 1px solid rgba(200,155,60,0.2);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    line-height: 2;
+}
 
-        #video-container {
-            display: none; 
-            text-align: center;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr;
-        }
+.divs strong {
+    color: var(--dorado-justicia);
+}
 
-        #click-div {
-            cursor: pointer;
-        }
+#click-div {
+    cursor: pointer;
+}
 
-        #video-container {
-            display: none; 
-            text-align: center;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto auto; 
-            gap: 20px;
-            margin-top: 30px;
-            margin-bottom: 30px;      
-        }
+#video-container {
+    display: none; 
+    text-align: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto; 
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;      
+}
 
-        #video-container p{
-            padding: 30px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(200,155,60,0.2);
-            text-align: center;
-            border-radius: 4px;
-        }
+#video-container p {
+    padding: 30px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200,155,60,0.2);
+    text-align: center;
+    border-radius: 4px;
+}
 
-        video {
-            margin: 0 auto;
-            max-width: 110%;
-            height: 400px; 
-            padding: 10px;
-            border: 2px solid var(--dorado-justicia);
-        }
+video {
+    margin: 0 auto;
+    max-width: 110%;
+    height: 400px; 
+    padding: 10px;
+    border: 2px solid var(--dorado-justicia);
+}
 
-        .menu-btn {
+.menu-btn {
+    display: none;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES: TABLETA (768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    body {
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    header {
+        min-height: auto; 
+    }
+
+    #hero {
+        background-color: var(--negro-fondo); 
+        background-size: contain;             
+        background-repeat: no-repeat;         
+        background-position: center;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 17 / 10; 
+    }
+
+    /* BARRA DE NAVEGACIÓN MÓVIL */
+    nav {
+        display: block; 
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 15px;
+        background-color: var(--negro-fondo);
+        min-height: 50px; 
+    }
+
+    /* BOTÓN HAMBURGUESA CON FLUIDEZ */
+    .menu-btn {
+        display: block;
+        float: right;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .menu-btn img {
+        background-color: var(--dorado-justicia);
+        width: 40px;          
+        height: auto;         
+        transition: transform 0.2s ease, background-color 0.2s ease;
+        border-radius: 4px;
+    }
+
+    .menu-btn:hover img {
+        transform: scale(1.1);
+        background-color: var(--blanco-pureza);
+    }
+
+    /* ENLACES OCULTOS EN LÍNEA DIRECTA */
+    nav a {
         display: none;
     }
 
-        @media (max-width: 768px) {
-    /* 1. Las habilidades pasan a 1 sola columna para que se lea bien */
+    /* EFECTO CORTINA: MENU LATERAL CON DESLIZAMIENTO SUAVE */
+    nav .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0; 
+        width: 260px; 
+        height: 100vh;
+        background-color: rgba(9, 17, 31, 0.98); 
+        border-left: 2px solid var(--dorado-justicia);
+        padding-top: 90px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        z-index: 1001;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+    }
+
+    nav .nav-links a {
+        display: block;
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+        width: 80%;
+        text-align: center;
+        padding: 12px 0;
+        margin: 0;
+    }
+
+    /* CUANDO ESTÁ ABIERTO: SE DESLIZA HACIA ADENTRO */
+    nav.abierto .nav-links {
+        transform: translateX(0);
+    }
+
+    nav.abierto .menu-btn img {
+        transform: rotate(90deg);
+        background-color: var(--blanco-pureza);
+    }
+
+    /* CONTENEDOR AUXILIAR DE RESPALDO */
+    nav.abierto {
+        display: block;
+        margin: 0;
+        grid-template-columns: none;
+        gap: 0;
+    }
+    
+    nav.abierto a {
+        border: none;
+    }
+
+    /* GRILLA DE HABILIDADES EN TABLETA */
     .habilidades-grid {
    display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -244,24 +353,6 @@
         width: 65%;
     }
 
-    body{
-        grid-template-rows: auto auto fr auto;
-    }
-
-    header {
-            min-height: auto; /* Evita el bloque vacío gigante */
-        }
-
-    #hero {
-            background-color: var(--negro-fondo); 
-            background-size: contain;             
-            background-repeat: no-repeat;         
-            background-position: center;
-            width: 100%;
-            height: auto;
-            aspect-ratio: 17 /10; /* Mantiene la proporción horizontal exacta del splash art sin dejar aire arriba ni abajo */
-        }
-    /* 2. Las secciones de historia/Lore pasan a 1 columna (Foto arriba o abajo del texto) */
     .texto-foto-derecha, 
     .texto-foto-izquierda {
         grid-template-columns: 1fr 1fr;
@@ -269,67 +360,23 @@
         gap: 15px;
     }
 
-    /* 3. Ajustamos las imágenes para que no tengan un alto fijo tan grande en móviles */
     .texto-foto-derecha img, 
     .texto-foto-izquierda img {
         height: auto;
         max-width: 100%;
     }
 
-    /* 4. Separación de secciones más amigable en móviles */
     section { 
         margin-top: 60px; 
     }
 
-    /* 5. Ajustes del menú de navegación para que no se amontone */
     video {
         height: auto;
         max-width: 90%;
     }
-
-
-    .menu-btn {
-                display: block;
-                float: right;
-            }
-
-            nav a {
-                display: none;
-            }
-
-            nav.abierto{
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 10px;
-                margin: 15px 0;
-            }
-
-            nav.abierto a {
-                display: block;
-                text-align: center;
-                border: 1px solid #c89b3c;
-            }
-
-            .menu-btn {
-
-                display: block;
-                float: right;
-                background: none;
-                border: none;
-                padding: 0;
-                cursor: pointer;
-            }
-
-            /* Estilos específicos para la foto del botón */
-            .menu-btn img {
-                background-color: var(--dorado-justicia);
-                width: 40px;          /* Ajustá el ancho a lo que te guste */
-                height: auto;         /* Evita que se deforme */
-            }
 }
 
 @media (max-width: 480px) {
-    /* 1. Las habilidades pasan a 1 sola columna para que se lea bien */
     .habilidades-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Grilla de 2 columnas principales */
@@ -355,96 +402,8 @@
         max-width: 100%;
     }
 
-    .habilidad-div img {
-            width: 64px;
-            height: 64px;
-            border: 2px solid var(--dorado-justicia);
-            margin-bottom: 15px;
-            display: block;    /* Permite que responda al margen automático */
-            margin-left: auto;  /* Centra horizontalmente */
-            margin-right: auto; /* Centra horizontalmente */
-        }
-
-    body{
-        grid-template-rows: auto auto fr auto;
-    }
-
-    header {
-            min-height: auto; /* Evita el bloque vacío gigante */
-        }
-
-    #hero {
-            background-color: var(--negro-fondo); 
-            background-size: contain;             
-            background-repeat: no-repeat;         
-            background-position: center;
-            width: 100%;
-            height: auto;
-            aspect-ratio: 17 /10; /* Mantiene la proporción horizontal exacta del splash art sin dejar aire arriba ni abajo */
-        }
-    /* 2. Las secciones de historia/Lore pasan a 1 columna (Foto arriba o abajo del texto) */
     .texto-foto-derecha, 
     .texto-foto-izquierda {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 15px;
     }
-
-    /* 3. Ajustamos las imágenes para que no tengan un alto fijo tan grande en móviles */
-    .texto-foto-derecha img, 
-    .texto-foto-izquierda img {
-        height: auto;
-        max-width: 100%;
-    }
-
-    /* 4. Separación de secciones más amigable en móviles */
-    section { 
-        margin-top: 60px; 
-    }
-
-    /* 5. Ajustes del menú de navegación para que no se amontone */
-    video {
-        height: auto;
-        max-width: 90%;
-    }
-
-
-    .menu-btn {
-                display: block;
-                float: right;
-            }
-
-            nav a {
-                display: none;
-            }
-
-            nav.abierto{
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 10px;
-                margin: 15px 0;
-            }
-
-            nav.abierto a {
-                display: block;
-                text-align: center;
-                border: 1px solid #c89b3c;
-            }
-
-            .menu-btn {
-
-                display: block;
-                float: right;
-                background: none;
-                border: none;
-                padding: 0;
-                cursor: pointer;
-            }
-
-            /* Estilos específicos para la foto del botón */
-            .menu-btn img {
-                background-color: var(--dorado-justicia);
-                width: 40px;          /* Ajustá el ancho a lo que te guste */
-                height: auto;         /* Evita que se deforme */
-            }
 }

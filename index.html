@@ -9,14 +9,19 @@
 <body>
 
     <nav id="menu">
-    <a href="#hero">Inicio</a>
-    <a href="#lore">Lore</a>
-    <a href="#Personalidad">Personalidad</a>
-    <a href="#Niñez">Niñez</a>
-    <a href="#relaciones">Relaciones</a>
-    <a href="#habilidades">Habilidades</a>
-    <button class="menu-btn" onclick="toggleMenu()"><img src="img/botton.png" alt="boton"></button>
-</nav>
+        <button class="menu-btn" onclick="toggleMenu()">
+            <img src="img/botton.png" alt="boton">
+        </button>
+        
+        <div class="nav-links">
+            <a href="#hero" onclick="toggleMenu()">Inicio</a>
+            <a href="#lore" onclick="toggleMenu()">Lore</a>
+            <a href="#Personalidad" onclick="toggleMenu()">Personalidad</a>
+            <a href="#Niñez" onclick="toggleMenu()">Niñez</a>
+            <a href="#relaciones" onclick="toggleMenu()">Relaciones</a>
+            <a href="#habilidades" onclick="toggleMenu()">Habilidades</a>
+        </div>
+    </nav>
 
     <header class="hero-garen" id="hero">
         <h1>Garen</h1>
