@@ -29,4 +29,11 @@ document.getElementById('justicia').addEventListener('click', function() {
     mostrarVideo('vid/R.mp4', 'Garen invoca el poder de Demacia para intentar ejecutar a un campeón enemigo.');
 });
 
-
+function toggleMenu() {
+    var nav = document.getElementById("menu");
+    if (nav.className === "") {
+        nav.className = "abierto";
+    } else {
+        nav.className = "";
+    }
+}

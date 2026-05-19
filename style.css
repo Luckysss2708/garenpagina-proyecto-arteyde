@@ -212,6 +212,10 @@
             border: 2px solid var(--dorado-justicia);
         }
 
+        .menu-btn {
+        display: none;
+    }
+
         @media (max-width: 768px) {
     /* 1. Las habilidades pasan a 1 sola columna para que se lea bien */
     .habilidades-grid {
@@ -228,6 +232,24 @@
         margin-left: 50%;
         width: 65%;
     }
+
+    body{
+        grid-template-rows: auto auto fr auto;
+    }
+
+    header {
+            min-height: auto; /* Evita el bloque vacío gigante */
+        }
+
+    #hero {
+            background-color: var(--negro-fondo); 
+            background-size: contain;             
+            background-repeat: no-repeat;         
+            background-position: center;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 17 /10; /* Mantiene la proporción horizontal exacta del splash art sin dejar aire arriba ni abajo */
+        }
     /* 2. Las secciones de historia/Lore pasan a 1 columna (Foto arriba o abajo del texto) */
     .texto-foto-derecha, 
     .texto-foto-izquierda {
@@ -249,17 +271,48 @@
     }
 
     /* 5. Ajustes del menú de navegación para que no se amontone */
-    nav {
-        text-align: center;
-    }
-    nav a {
-        margin: 0 10px;
-        display: inline-block;
-        padding: 5px 0;
-    }
-
     video {
         height: auto;
         max-width: 90%;
     }
+
+
+    .menu-btn {
+                display: block;
+                float: right;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            nav.abierto{
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                margin: 15px 0;
+            }
+
+            nav.abierto a {
+                display: block;
+                text-align: center;
+                border: 1px solid #c89b3c;
+            }
+
+            .menu-btn {
+
+                display: block;
+                float: right;
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+            }
+
+            /* Estilos específicos para la foto del botón */
+            .menu-btn img {
+                background-color: var(--dorado-justicia);
+                width: 40px;          /* Ajustá el ancho a lo que te guste */
+                height: auto;         /* Evita que se deforme */
+            }
 }
