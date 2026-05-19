@@ -7,11 +7,15 @@
 
         body {
             display: grid;
-            grid-template-rows: auto 100vh auto;
+            grid-template-rows: auto 1fr auto;
             background-color: var(--azul-demacia);
             color: var(--blanco-pureza);
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
+        }
+
+        header{
+            min-height: 100vh;
         }
 
         nav {
@@ -33,8 +37,6 @@
             letter-spacing: 2px;
             font-size: 0.9rem;
         } 
-
-
 
         .hero-garen {
             background: linear-gradient(rgba(0,0,0,0), var(--negro-fondo)), 
@@ -209,3 +211,55 @@
             padding: 10px;
             border: 2px solid var(--dorado-justicia);
         }
+
+        @media (max-width: 768px) {
+    /* 1. Las habilidades pasan a 1 sola columna para que se lea bien */
+    .habilidades-grid {
+   display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    }
+    #justicia {
+        margin-left: 50%;
+        width: 65%;
+    }
+
+    #juicio {
+        margin-left: 50%;
+        width: 65%;
+    }
+    /* 2. Las secciones de historia/Lore pasan a 1 columna (Foto arriba o abajo del texto) */
+    .texto-foto-derecha, 
+    .texto-foto-izquierda {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 15px;
+    }
+
+    /* 3. Ajustamos las imágenes para que no tengan un alto fijo tan grande en móviles */
+    .texto-foto-derecha img, 
+    .texto-foto-izquierda img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* 4. Separación de secciones más amigable en móviles */
+    section { 
+        margin-top: 60px; 
+    }
+
+    /* 5. Ajustes del menú de navegación para que no se amontone */
+    nav {
+        text-align: center;
+    }
+    nav a {
+        margin: 0 10px;
+        display: inline-block;
+        padding: 5px 0;
+    }
+
+    video {
+        height: auto;
+        max-width: 90%;
+    }
+}
