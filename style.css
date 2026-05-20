@@ -21,32 +21,108 @@ header {
 }
 
 nav {
+    display: block; 
+    z-index: 1000;
+    padding: 15px;
     background-color: var(--negro-fondo);
-    border-bottom: 2px solid var(--dorado-justicia);
-    padding: 15px 15px;
+    min-height: 50px; 
     position: sticky;
     top: 0;
-    z-index: 1000;
-    text-align: left;
 }
 
 nav a {
+    display: none;
+}
+
+.menu-btn {
+    display: block;
+    float: right;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 1002;
+}
+
+.menu-btn img {
+    background-color: var(--dorado-justicia);
+    width: 40px;          
+    height: auto;         
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border-radius: 4px;
+}
+
+.menu-btn:hover img {
+    transform: scale(1.1);
+    background-color: var(--blanco-pureza);
+}
+
+nav .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 260px; 
+    height: 100vh;
+    background-color: rgba(9, 17, 31, 0.98); 
+    border-left: 2px solid var(--dorado-justicia);
+    padding-top: 90px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+nav .nav-links a {
+    display: block;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    width: 80%;
+    text-align: center;
+    padding: 12px 0;
+    margin: 0;
     color: var(--dorado-justicia);
     text-decoration: none;
-    margin: 0 20px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
     transition: all 0.3s;
-} 
+}
 
 nav a:hover {
     display: inline-block;
-  background: rgba(200, 155, 60, 0.05); /* Soft transparent background */
   border-color: var(--dorado-justicia);
   transform: translateY(-5px); /* Fixed spacing */
   cursor: pointer;
+  color: var(--blanco-pureza);
+text-shadow: 0 0 10px rgba(200, 155, 60, 0.5);
+}
+
+nav.abierto .nav-links {
+    transform: translateX(0);
+}
+
+nav.abierto .menu-btn img {
+    transform: rotate(90deg);
+    background-color: var(--blanco-pureza);
+}
+
+nav.cerrado .menu-btn img {
+    transform: rotate(0deg);
+    background-color: var(--dorado-justicia);
+}
+
+nav.abierto {
+    display: block;
+    margin: 0;
+    grid-template-columns: none;
+    gap: 0;
+}
+
+nav.abierto a {
+    border: none;
 }
 
 .hero-garen {
@@ -133,15 +209,6 @@ h2 {
     margin-top: 10px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 2px solid var(--dorado-justicia);
-    color: var(--blanco-pureza);
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
 .texto-foto-derecha {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -220,13 +287,15 @@ video {
     border: 2px solid var(--dorado-justicia);
 }
 
-.menu-btn {
-    display: none;
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid var(--dorado-justicia);
+    color: var(--blanco-pureza);
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-/* ==========================================================================
-   MEDIA QUERIES: TABLETA (768px)
-   ========================================================================== */
 
 @media (max-width: 768px) {
     body {
@@ -247,115 +316,12 @@ video {
         aspect-ratio: 17 / 10; 
     }
 
-    /* BARRA DE NAVEGACIÓN MÓVIL */
-    nav {
-        display: block; 
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        padding: 15px;
-        background-color: var(--negro-fondo);
-        min-height: 50px; 
-    }
-
-    /* BOTÓN HAMBURGUESA CON FLUIDEZ */
-    .menu-btn {
-        display: block;
-        float: right;
-        background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        position: relative;
-        z-index: 1002;
-    }
-
-    .menu-btn img {
-        background-color: var(--dorado-justicia);
-        width: 40px;          
-        height: auto;         
-        transition: transform 0.2s ease, background-color 0.2s ease;
-        border-radius: 4px;
-    }
-
-    .menu-btn:hover img {
-        transform: scale(1.1);
-        background-color: var(--blanco-pureza);
-    }
-
-    /* ENLACES OCULTOS EN LÍNEA DIRECTA */
-    nav a {
-        display: none;
-    }
-
-    /* EFECTO CORTINA: MENU LATERAL CON DESLIZAMIENTO SUAVE */
-    nav .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0; 
-        width: 260px; 
-        height: 100vh;
-        background-color: rgba(9, 17, 31, 0.98); 
-        border-left: 2px solid var(--dorado-justicia);
-        padding-top: 90px; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        z-index: 1001;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-    }
-
-    nav .nav-links a {
-        display: block;
-        font-size: 1.1rem;
-        letter-spacing: 3px;
-        width: 80%;
-        text-align: center;
-        padding: 12px 0;
-        margin: 0;
-    }
-
-    /* CUANDO ESTÁ ABIERTO: SE DESLIZA HACIA ADENTRO */
-    nav.abierto .nav-links {
-        transform: translateX(0);
-    }
-
-    nav.abierto .menu-btn img {
-        transform: rotate(90deg);
-        background-color: var(--blanco-pureza);
-    }
-
-    nav.cerrado .menu-btn img{
-        transform: rotate(0deg);
-        background-color: var(--dorado-justicia);
-    }
-
-    /* CONTENEDOR AUXILIAR DE RESPALDO */
-    nav.abierto {
-        display: block;
-        margin: 0;
-        grid-template-columns: none;
-        gap: 0;
-    }
-    
-    nav.abierto a {
-        border: none;
-    }
-
-    /* GRILLA DE HABILIDADES EN TABLETA */
     .habilidades-grid {
-   display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
-    }
-    #justicia {
-        margin-left: 50%;
-        width: 65%;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px;
     }
 
-    #juicio {
+    #justicia, #juicio {
         margin-left: 50%;
         width: 65%;
     }
@@ -378,15 +344,14 @@ video {
     }
 
     video {
-        height: auto;
         max-width: 90%;
+        height: auto;
     }
 }
 
 @media (max-width: 480px) {
     .habilidades-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Grilla de 2 columnas principales */
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
 
@@ -398,15 +363,14 @@ video {
         box-sizing: border-box;
         padding: 15px;
     }
-#juicio, #justicia {
+
+    #juicio, #justicia {
         margin-left: 0;
         width: 100%;
     }
 
-    /* Hacemos que la última habilidad (Justicia) ocupe las 2 columnas y quede centrada abajo */
     #justicia {
         grid-column: span 2;
-        max-width: 100%;
     }
 
     .texto-foto-derecha, 
