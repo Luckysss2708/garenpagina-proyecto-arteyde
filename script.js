@@ -32,9 +32,9 @@ document.getElementById('justicia').addEventListener('click', function() {
 
 function toggleMenu() {
     var nav = document.getElementById("menu");
-    if (nav.className === "") {
+    if (nav.className === "cerrado") {
         nav.className = "abierto";
     } else {
-        nav.className = "";
+        nav.className = "cerrado";
     }
 }

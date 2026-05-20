@@ -42,9 +42,11 @@ nav a {
 } 
 
 nav a:hover {
-    background: rgba(200,155,60,0.05);
-    border-color: var(--dorado-justicia);
-    transform: translateY(-5px);
+    display: inline-block;
+  background: rgba(200, 155, 60, 0.05); /* Soft transparent background */
+  border-color: var(--dorado-justicia);
+  transform: translateY(-5px); /* Fixed spacing */
+  cursor: pointer;
 }
 
 .hero-garen {
@@ -323,6 +325,11 @@ video {
     nav.abierto .menu-btn img {
         transform: rotate(90deg);
         background-color: var(--blanco-pureza);
+    }
+
+    nav.cerrado .menu-btn img{
+        transform: rotate(0deg);
+        background-color: var(--dorado-justicia);
     }
 
     /* CONTENEDOR AUXILIAR DE RESPALDO */
