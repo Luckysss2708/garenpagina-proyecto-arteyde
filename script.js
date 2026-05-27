@@ -10,15 +10,15 @@ function mostrarVideo(source, texto) {
 }
 
 document.getElementById('perseverancia').addEventListener('click', function() {
-    mostrarVideo('vid/pasiva.mp4', 'Si Garen no se ha visto afectado recientemente por ataques o habilidades de enemigos, regenera un porcentaje de su vida máxima cada segundo.');
+    mostrarVideo('vid/pasiva.mp4', 'Regenera salud de forma pasiva cuando no recibe daño por un tiempo, lo que le permite mantenerse en la línea y recuperarse entre intercambios.');
 });
 
 document.getElementById('goledecisivo').addEventListener('click', function() {
-    mostrarVideo('vid/Q.mp4', 'Garen obtiene un aumento de velocidad de movimiento y se libra de todas las ralentizaciones. Su siguiente ataque golpea una zona vital de su enemigo, lo que inflige daño adicional y lo silencia.');
+    mostrarVideo('vid/Q.mp4', 'Ejecuta un ataque potenciado que inflige daño adicional y silencia brevemente al objetivo, ideal para interrumpir hechizos o ganar ventaja en un duelo.');
 });
 
 document.getElementById('coraje').addEventListener('click', function() {
-    mostrarVideo('vid/W.mp4', 'Garen aumenta de forma pasiva su armadura y su resistencia mágica al asesinar a enemigos. También puede activar esta habilidad para obtener un escudo y una mejora de tenacidad durante un breve periodo de tiempo, seguido de una reducción de daño menor que dura más.'); 
+    mostrarVideo('vid/W.mp4', 'Otorga un escudo temporal y reducción de daño, aumentando su capacidad para resistir golpes y mantenerse en la línea frontal durante peleas prolongadas.'); 
 });
 
 document.getElementById('juicio').addEventListener('click', function() {

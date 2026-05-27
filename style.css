@@ -14,21 +14,50 @@ body {
     margin: 0;
     overflow-x: hidden;
     width: 100vw;
+    cursor: url('img/cursornormal-small.png') 0 0, auto;
+}
+
+html {
+    cursor: url('img/cursornormal-small.png') 0 0, auto;
+}
+
+a,
+button,
+.menu-btn,
+.habilidad-div {
+    cursor: url('img/cursorclick-small.png') 0 0, pointer;
 }
 
 header {
     min-height: 100vh;
 }
 
+.container h1{
+    text-align: center; 
+}
+
 nav {
-    display: block; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     z-index: 1000;
-    padding: 15px;
+    padding: 15px 20px;
     background-color: var(--negro-fondo);
-    min-height: 50px; 
+    min-height: 60px;
     position: sticky;
     top: 0;
     border-bottom: 2px solid var(--dorado-justicia);
+}
+
+.nav-left-text {
+    font-family: 'Segoe UI', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--dorado-justicia);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 10px 16px;
 }
 
 nav a {
@@ -97,10 +126,17 @@ nav .nav-links a {
 nav a:hover {
     display: inline-block;
   border-color: var(--dorado-justicia);
-  transform: translateY(-5px); /* Fixed spacing */
-  cursor: pointer;
+  transform: translateY(-5px); 
+  cursor: url('img/cursorclick-small.png') 0 0, pointer;
   color: var(--blanco-pureza);
 text-shadow: 0 0 10px rgba(200, 155, 60, 0.5);
+}
+
+.menu-btn:hover,
+button:hover,
+a:hover,
+.habilidad-div:hover {
+    cursor: url('img/cursorclick-small.png') 0 0, pointer;
 }
 
 nav.abierto .nav-links {
@@ -181,7 +217,7 @@ h2 {
 .habilidad-div { 
     background: rgba(255,255,255,0.03);
     padding: 30px;
-    border: 1px solid rgba(200,155,60,0.2);
+    border: 1px solid var(--dorado-justicia);
     text-align: center;
     border-radius: 4px;
     transition: all 0.3s;
