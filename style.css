@@ -221,12 +221,18 @@ h2 {
     border-radius: 4px;
     transition: all 0.3s;
     margin-bottom: 20px;
+    transform-origin: center; transition: transform 1.5s, box-shadow 1.5s; 
 }
 
 .habilidad-div:hover {
     background: rgba(200,155,60,0.05);
     border-color: var(--dorado-justicia);
     transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(200,155,60,.9);
+}
+
+.habilidad-div:hover {
+    transform: rotateY(360deg) scale(1.05);
 }
 
 .habilidad-div img {
