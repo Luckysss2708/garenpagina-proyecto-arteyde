@@ -197,9 +197,9 @@ main{
 }
 
 section { 
-    border-bottom: 2px solid var(--dorado-justicia);
-    margin-bottom: 20px;
-    margin-top: 80px; 
+    padding-bottom: 100px;
+    margin-top: 80px;
+    border-bottom: 2px solid var(--dorado-justicia); 
 }
 
 h2 {
@@ -211,6 +211,13 @@ h2 {
     margin-bottom: 40px;
 }
 
+#habilidades {
+    padding-bottom: 80px;
+}
+#habilidades p {
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
 .habilidades-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -297,7 +304,7 @@ img:hover {
     padding: 20px; 
     border: 1px solid rgba(200,155,60,0.2);
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
     line-height: 2;
 }
 
@@ -325,6 +332,9 @@ img:hover {
     border: 1px solid rgba(200,155,60,0.2);
     text-align: center;
     border-radius: 4px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 video {
