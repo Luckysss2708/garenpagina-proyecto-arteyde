@@ -186,9 +186,6 @@ nav.abierto a {
     font-style: italic;
 }
 
-main{
-    grid-template-columns: 1fr 3fr 1fr;
-}
 .container {
     max-width: 1200px; 
     margin: auto;
@@ -346,12 +343,15 @@ video {
 }
 
 footer {
+    width: 100%;
     text-align: center;
     padding: 20px;
+    margin-top: 40px;
     border-top: 2px solid var(--dorado-justicia);
     color: var(--blanco-pureza);
     font-size: 1.2rem;
     font-weight: bold;
+    background-color: var(--negro-fondo);
 }
 
 
