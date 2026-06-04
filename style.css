@@ -218,7 +218,7 @@ h2 {
 .habilidades-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 40px;
 }
 
 .habilidad-div { 
@@ -427,7 +427,7 @@ h2 {
 }
 
 video {
-    margin: 0 auto;
+    margin: 30px auto;
     max-width: 110%;
     height: 400px; 
     padding: 10px;
@@ -468,40 +468,36 @@ footer {
 
     .habilidades-grid {
         grid-template-columns: repeat(3, 1fr); 
-        gap: 20px;
-    }
-
-    #skins button{
-        display: none;
+        gap: 25px;
     }
 
     /* Responsive rules for skins section */
     .skins-display {
-        grid-template-columns: 1fr;
-        position: relative;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .skins-figure {
+        width: 100%;
     }
 
     .skins-figure img {
         height: 300px;
+        width: 100%;
     }
 
     .skins-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
-        opacity: 0.95;
+        position: static;
+        width: 46px;
+        height: 46px;
     }
 
-    .skins-nav.prev {
-        left: 8px;
-    }
-
+    .skins-nav.prev,
     .skins-nav.next {
-        right: 8px;
+        margin: 0;
     }
 
     .skins-thumbs {
@@ -518,24 +514,6 @@ footer {
     #justicia, #juicio {
         margin-left: 50%;
         width: 65%;
-    }
-
-    .skins-display {
-        grid-template-columns: 1fr;
-    }
-
-    .skins-nav {
-        position: static;
-        width: 46px;
-        height: 46px;
-    }
-
-    .skins-figure img {
-        height: auto;
-    }
-
-    .skins-thumbs {
-        gap: 10px;
     }
 
     .texto-foto-derecha, 
@@ -564,18 +542,28 @@ footer {
 @media (max-width: 480px) {
     .habilidades-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 20px;
     }
 
-    /* Smaller screens: reduce main image and thumbnails */
+    .skins-display {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 8px;
+    }
+
+    .skins-figure {
+        width: 100%;
+    }
+
     .skins-figure img {
         height: 220px;
+        width: 100%;
     }
 
     .skins-nav {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
+        position: static;
     }
 
     .skins-thumb img {
