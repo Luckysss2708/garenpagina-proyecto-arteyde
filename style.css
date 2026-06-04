@@ -286,15 +286,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-img {
-    transition: all 0.3s;
-} 
-
-img:hover {
-    background: rgba(200,155,60,0.05);
-    border-color: var(--dorado-justicia);
-    transform: translateY(-5px);
-}
 
 .divs p {
     background: rgba(255,255,255,0.03);
@@ -307,9 +298,6 @@ img:hover {
 
 .divs strong {
     color: var(--dorado-justicia);
-}
-#skins{
-    margin: 0;
 }
     .skins-section .skins-carousel {
         display: grid;
@@ -329,7 +317,6 @@ img:hover {
 
     .skins-figure {
         margin: 0;
-        background: rgba(255,255,255,0.04);
         border: 2px solid var(--dorado-justicia);
         border-radius: 10px;
         overflow: hidden;
@@ -342,18 +329,16 @@ img:hover {
         height: 450px;
         object-fit: cover;
         display: block;
-        border-bottom: 2px solid var(--dorado-justicia);
-        background: linear-gradient(rgba(0,0,0,0), var(--negro-fondo));
     }
 
     .skins-figure figcaption {
         margin: 0;
-        padding: 15px;
+        padding: 0;
         text-align: center;
     }
 
     .skins-figure h3 {
-        margin: 0 0 10px;
+        margin: 20px 10px;
         font-size: 2rem;
         color: var(--dorado-justicia);
     }
@@ -389,6 +374,11 @@ img:hover {
         padding-bottom: 10px;
         align-items: center;
     }
+
+    #skins p{
+        text-align: center;
+        margin: 20px 40px;
+        }
 
     .skins-thumbs::-webkit-scrollbar {
         height: 8px;
@@ -481,6 +471,50 @@ footer {
         gap: 20px;
     }
 
+    #skins button{
+        display: none;
+    }
+
+    /* Responsive rules for skins section */
+    .skins-display {
+        grid-template-columns: 1fr;
+        position: relative;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .skins-figure img {
+        height: 300px;
+    }
+
+    .skins-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        opacity: 0.95;
+    }
+
+    .skins-nav.prev {
+        left: 8px;
+    }
+
+    .skins-nav.next {
+        right: 8px;
+    }
+
+    .skins-thumbs {
+        padding-left: 10px;
+        margin-top: 18px;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .skins-thumb {
+        min-width: 90px;
+    }
+
     #justicia, #juicio {
         margin-left: 50%;
         width: 65%;
@@ -531,6 +565,27 @@ footer {
     .habilidades-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+    }
+
+    /* Smaller screens: reduce main image and thumbnails */
+    .skins-figure img {
+        height: 220px;
+    }
+
+    .skins-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .skins-thumb img {
+        width: 86px !important;
+        height: 56px !important;
+    }
+
+    .skins-thumbs {
+        padding-left: 6px;
+        gap: 8px;
     }
 
     .habilidad-div {
