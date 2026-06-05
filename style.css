@@ -381,12 +381,11 @@ h2 {
         }
 
     .skins-thumbs::-webkit-scrollbar {
-        height: 8px;
+        height: 40px;
     }
 
     .skins-thumbs::-webkit-scrollbar-thumb {
-        background: rgba(200,155,60,0.6);
-        border-radius: 10px;
+        background: url('img/espadascroll.png') center/cover no-repeat;
     }
 
     .skins-thumb {
