@@ -309,7 +309,7 @@ h2 {
 
     .skins-display {
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: 1fr;
         align-items: center;
         gap: 10px;
         width: 100%;
@@ -474,7 +474,7 @@ footer {
     /* Responsive rules for skins section */
     .skins-display {
         display: grid;
-        grid-template-columns: auto minmax(0, 1fr) auto;
+        grid-template-columns: 1fr;
         align-items: center;
         gap: 10px;
         width: 100%;
@@ -490,6 +490,7 @@ footer {
     }
 
     .skins-nav {
+        display: none;
         position: static;
         width: 46px;
         height: 46px;
@@ -546,7 +547,7 @@ footer {
     }
 
     .skins-display {
-        grid-template-columns: auto minmax(0, 1fr) auto;
+        grid-template-columns: 1fr;
         gap: 8px;
     }
 
@@ -560,6 +561,7 @@ footer {
     }
 
     .skins-nav {
+        display: none;
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
