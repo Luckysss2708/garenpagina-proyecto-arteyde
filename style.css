@@ -386,6 +386,7 @@ h2 {
 
     .skins-thumbs::-webkit-scrollbar-thumb {
         background: url('img/espadascroll.png') center/cover no-repeat;
+        background-size: 60% 1000%;
     }
 
     .skins-thumb {
@@ -537,6 +538,16 @@ footer {
         max-width: 90%;
         height: auto;
     }
+
+    .skins-thumbs::-webkit-scrollbar {
+        height: 40px;
+    }
+
+    .skins-thumbs::-webkit-scrollbar-thumb {
+        background: url('img/espadascroll.png') center/cover no-repeat;
+        background-size: 100% 1000%;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -598,5 +609,14 @@ footer {
     .texto-foto-derecha, 
     .texto-foto-izquierda {
         grid-template-columns: 1fr;
+    }
+
+    .skins-thumbs::-webkit-scrollbar {
+        height: 40px;
+    }
+
+    .skins-thumbs::-webkit-scrollbar-thumb {
+        background: url('img/espadascroll.png') center/cover no-repeat;
+        background-size: 110% 800%;
     }
 }
