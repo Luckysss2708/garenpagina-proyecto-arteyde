@@ -46,17 +46,16 @@ var skins = [
         title: 'Original',
         desc: 'La apariencia original de Garen en Demacia.'
     },
-
     {
         src: 'img/skins/Garen_BattleAcademiaSkin.jpg',
-        alt: 'Garen Battle Academia',
-        title: 'Battle Academia',
+        alt: 'Garen Academia de Combate',
+        title: 'Academia de Combate',
         desc: 'Garen en un estilo inspirado en academias de élite y combate futurista.'
     },
     {
         src: 'img/skins/Garen_CommandoSkin.jpg',
-        alt: 'Garen Commando',
-        title: 'Commando',
+        alt: 'Garen Comando',
+        title: 'Comando',
         desc: 'Una versión más táctica y militar del guerrero de Demacia.'
     },
     {
@@ -67,38 +66,38 @@ var skins = [
     },
     {
         src: 'img/skins/Garen_DesertTrooperSkin.jpg',
-        alt: 'Garen Desert Trooper',
-        title: 'Desert Trooper',
+        alt: 'Garen Soldado del Desierto',
+        title: 'Soldado del Desierto',
         desc: 'Garen adaptado a un campo de batalla árido y militarizado.'
     },
     {
         src: 'img/skins/Garen_DreadknightSkin.jpg',
-        alt: 'Garen Dreadknight',
-        title: 'Dreadknight',
+        alt: 'Garen Caballero de Terror',
+        title: 'Caballero de Terror',
         desc: 'Una versión oscura y temible del caballero de Demacia.'
     },
     {
         src: 'img/skins/Garen_FallenGod-KingSkin.jpg',
-        alt: 'Garen Fallen God-King',
-        title: 'Fallen God-King',
+        alt: 'Garen Dios del Rey Caído',
+        title: 'Dios Rey Caído',
         desc: 'Apariencia mística y poderosa, casi divina.'
     },
     {
         src: 'img/skins/Garen_God-KingSkin.jpg',
-        alt: 'Garen God-King',
-        title: 'God-King',
+        alt: 'Garen Dios Rey',
+        title: 'Dios Rey',
         desc: 'El rey divino con armadura y presencia imponente.'
     },
     {
         src: 'img/skins/Garen_MechaKingdomsSkin.jpg',
-        alt: 'Garen Mecha Kingdoms',
-        title: 'Mecha Kingdoms',
+        alt: 'Garen Reinos Mecha',
+        title: 'Reinos Mecha',
         desc: 'Una interpretación futurista con poder mecanizado.'
     },
     {
         src: 'img/skins/Garen_MythmakerSkin.jpg',
-        alt: 'Garen Mythmaker',
-        title: 'Mythmaker',
+        alt: 'Garen Creador de Mitos',
+        title: 'Creador de Mitos',
         desc: 'Una estética clásica con toques de mitología y fantasía.'
     },
     {
@@ -109,44 +108,44 @@ var skins = [
     },
     {
         src: 'img/skins/Garen_PrestigeMechaKingdomsSkin.jpg',
-        alt: 'Garen Prestige Mecha Kingdoms',
-        title: 'Prestige Mecha Kingdoms',
-        desc: 'La versión prestigiosa y dorada de Mecha Kingdoms.'
+        alt: 'Garen Reinos Mecha Prestigioso',
+        title: 'Reinos Mecha Prestigioso',
+        desc: 'La versión prestigiosa y dorada de Reinos Mecha.'
     },
     {
         src: 'img/skins/Garen_RogueAdmiralSkin.jpg',
-        alt: 'Garen Rogue Admiral',
-        title: 'Rogue Admiral',
+        alt: 'Garen Almirante Rufián',
+        title: 'Almirante Rufián',
         desc: 'Garen como un capitán rebelde al mando de su flota.'
     },
     {
         src: 'img/skins/Garen_RuggedSkin.jpg',
-        alt: 'Garen Rugged',
-        title: 'Rugged',
+        alt: 'Garen Errante',
+        title: 'Errante',
         desc: 'Aspecto rudo y resistente, listo para la batalla en el campo.'
     },
     {
         src: 'img/skins/Garen_SanguineSkin.jpg',
-        alt: 'Garen Sanguine',
-        title: 'Sanguine',
+        alt: 'Garen Sanguineo',
+        title: 'Sanguíneo',
         desc: 'Una skin con colores oscuros y una vibra siniestra.'
     },
     {
         src: 'img/skins/Garen_SteelLegionSkin.jpg',
-        alt: 'Garen Steel Legion',
-        title: 'Steel Legion',
+        alt: 'Garen Legión de Acero',
+        title: 'Legión de Acero',
         desc: 'La clásica armadura metálica de la Legión de Acero.'
     },
     {
         src: 'img/skins/Garen_VisionsoftheFallenSkin.jpg',
-        alt: 'Garen Visions of the Fallen',
-        title: 'Visions of the Fallen',
+        alt: 'Garen Visiones de los Caídos',
+        title: 'Visiones de los Caídos',
         desc: 'Una apariencia elegante y visionaria del héroe demaciano.'
     },
     {
         src: 'img/skins/Garen_WarringKingdomsSkin.jpg',
-        alt: 'Garen Warring Kingdoms',
-        title: 'Warring Kingdoms',
+        alt: 'Garen Reinos en Guerra',
+        title: 'Reinos en Guerra',
         desc: 'Una skin épica con motivación histórica y fragmentos de batalla.'
     }
 ];

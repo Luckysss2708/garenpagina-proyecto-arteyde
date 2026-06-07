@@ -164,8 +164,7 @@ nav.abierto a {
 }
 
 .hero-garen {
-    background: linear-gradient(rgba(0,0,0,0), var(--negro-fondo)), 
-                url('img/garen-splash-art-league-of-legends-vs-legends-of-runeterra-v0-q20toudn4og61.webp');
+    background-image: url('img/garen.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -619,4 +618,5 @@ footer {
         background: url('img/espadascroll.png') center/cover no-repeat;
         background-size: 110% 800%;
     }
+    
 }
