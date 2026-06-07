@@ -125,11 +125,11 @@ nav .nav-links a {
 
 nav a:hover {
     display: inline-block;
-  border-color: var(--dorado-justicia);
-  transform: translateY(-5px); 
-  cursor: url('img/cursorclick-small.png') 0 0, pointer;
-  color: var(--blanco-pureza);
-text-shadow: 0 0 10px rgba(200, 155, 60, 0.5);
+    border-color: var(--dorado-justicia);
+    transform: translateY(-5px); 
+    cursor: url('img/cursorclick-small.png') 0 0, pointer;
+     color: var(--blanco-pureza);
+    text-shadow: 0 0 10px rgba(200, 155, 60, 0.5);
 }
 
 .menu-btn:hover,
@@ -177,7 +177,7 @@ nav.abierto a {
 
 .hero-garen h1 {
     font-size: clamp(3rem, 10vw, 6rem); 
-    color: var(--dorado-justicia);
+    color: var(--blanco-pureza);
     text-transform: uppercase;
     margin: 0;
     text-shadow: 0 0 20px rgba(0,0,0,0.9);
@@ -205,6 +205,13 @@ h2 {
     padding-left: 20px;
     color: var(--dorado-justicia);
     margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+.divs:hover h2 {
+    border-left-width: 16px;
+    padding-left: 24px;
+    color: var(--dorado-justicia);
 }
 
 #habilidades {
@@ -236,6 +243,12 @@ h2 {
     border-color: var(--dorado-justicia);
     transform: translateY(-5px);
     box-shadow: 0 0 18px rgba(200,155,60,.9);
+}
+
+#habilidades:hover h2 {
+    border-left-width: 16px;
+    padding-left: 24px;
+    color: var(--dorado-justicia);
 }
 
 .habilidad-div:hover {
