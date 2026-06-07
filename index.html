@@ -4,38 +4,46 @@
     <meta charset="UTF-8">
     <title>Garen: El Poder de Demacia</title>
     <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
     <nav id="menu">
-    <a href="#hero">Inicio</a>
-    <a href="#lore">Lore</a>
-    <a href="#Personalidad">Personalidad</a>
-    <a href="#Niñez">Niñez</a>
-    <a href="#relaciones">Relaciones</a>
-    <a href="#habilidades">Habilidades</a>
-    <button class="menu-btn" onclick="toggleMenu()"><img src="img/botton.png" alt="boton"></button>
-</nav>
+        <div class="nav-left-text">Acerca de mi personaje favorito...</div>
+        <button class="menu-btn" onclick="toggleMenu()">
+            <img src="img/botton.png" alt="boton">
+        </button>
+        
+        <div class="nav-links">
+            <a href="#hero" onclick="toggleMenu()">Inicio</a>
+            <a href="#lore" onclick="toggleMenu()">Lore</a>
+            <a href="#Personalidad" onclick="toggleMenu()">Personalidad</a>
+            <a href="#Niñez" onclick="toggleMenu()">Niñez</a>
+            <a href="#relaciones" onclick="toggleMenu()">Relaciones</a>
+            <a href="#skins" onclick="toggleMenu()">Skins</a>
+            <a href="#habilidades" onclick="toggleMenu()">Habilidades</a>
+        </div>
+    </nav>
 
     <header class="hero-garen" id="hero">
         <h1>Garen</h1>
         <p>"DEMACIAAAA"</p>
     </header>
+    <main>
+        <div class="container">
 
-    <div class="container">
-
-        
         <section id="lore" class="divs"> 
-            <h2>Conoce a Garen</h2>
+            <h2>Lore</h2>
             <div class="texto-foto-derecha">
                 <div>
-                    <p>Garen, un orgulloso y noble guerrero, lucha en las filas de la Vanguardia Impertérrita. Es querido entre sus compañeros y respetado por sus enemigos, y no solo por ser vástago de la prestigiosa familia Crownguard, responsable de la defensa de Demacia y sus ideales. Ataviado con una armadura resistente a la magia y empuñando una poderosa espada, Garen siempre está listo para enfrentarse a los magos y hechiceros en el campo de batalla como un auténtico torbellino de virtuoso acero.</p>
+                    <p>Garen es un guerrero notable de Demacia y uno de los miembros más destacados de la Vanguardia Impertérrita. Hijo de la familia Crownguard, su vida está marcada por el deber y la defensa de los ideales demacianos: honor, disciplina y protección de los inocentes. En el campo de batalla se le reconoce por su armadura resistente a la magia y por empuñar una espada capaz de decantar combates, enfrentándose a magos y fuerzas enemigas con decisión. A lo largo de diversas campañas contra amenazas como Noxus y en relatos canónicos y cómics, Garen ha demostrado tanto su capacidad militar como las dudas y retos personales que acompañan a quienes asumen el peso de la responsabilidad pública. Su figura se mantiene como símbolo de liderazgo y coraje dentro del universo de Runaterra.</p>
                 </div>
                 <div>
                     <img src="img/Garen_conVanguardia.webp" alt="FotoGaren">
                  </div>
             </div>
         </section> 
+
 
         <section id ="Personalidad" class="divs">
             <h2>Un ejemplo a seguir</h2>
@@ -44,17 +52,16 @@
                     <img src="img/Garen_Personalidad.png" alt="FotoGaren">
                 </div>
                 <div> 
-                    <p>Garen es un modelo de virtud y honor, siempre dispuesto a sacrificarse por el bienestar de su nación. 
-                    Su lealtad inquebrantable a Demacia y su compromiso con la justicia lo convierten en un líder inspirador para sus compañeros y un adversario temible para sus enemigos.</p>
+                    <p>Garen encarna la disciplina, la lealtad y el sentido del deber característicos de Demacia. Su liderazgo es directo y ejemplar: prioriza el bienestar colectivo por encima de la gloria personal y guía a sus compañeros con firmeza y empatía. Aunque su enfoque es tradicional y muchas veces austero, también muestra compasión y protección hacia los vulnerables, y en ocasiones enfrenta dilemas morales cuando las políticas y la realidad del combate chocan. Esa mezcla de convicción, responsabilidad y humanidad hace de Garen una figura respetada tanto en tiempos de paz como en guerra.</p>
                 </div>
             </div>
         </section>
 
-        <Section id ="Niñez" class="divs">
+        <section id ="Niñez" class="divs">
             <h2>Niñez y Juventud</h2>
             <div class="texto-foto-derecha">
                 <div>
-                    <p>Garen nació en la ciudad de Alto Silvermere, en el seno de la noble familia Crownguard. Desde temprana edad, mostró un fuerte sentido del deber y una pasión por proteger a los demás. Su infancia estuvo marcada por el entrenamiento riguroso y las expectativas de su linaje, lo que lo preparó para su futuro como defensor de Demacia.</p>
+                    <p>Nacido en Alto Silvermere dentro de la influyente familia Crownguard, Garen recibió una formación marcial y ética desde niño. Su educación combinó entrenamiento físico exigente con una enseñanza orientada al servicio público, la disciplina y el honor: valores que forjaron su carácter y lo impulsaron a alistarse en la Vanguardia Impertérrita. Creció junto a su hermana Lux, con quien comparte vínculos afectivos y tensiones familiares, y pronto demostró aptitudes para liderar y proteger a su gente en tiempos convulsos.</p>
                 </div>
                 <div>
                     <img src="img/Garen_bebe.png" alt="FotoGaren">
@@ -69,7 +76,7 @@
                     <img src="img/Garen_ejemplo.jpg" alt="FotoGaren">
                 </div>
                 <div>
-                    <p>Garen mantiene relaciones cercanas con sus compañeros de la Vanguardia Intrépida, especialmente con Lux, su hermana menor, y con Jarvan IV, el príncipe de Demacia. Su vínculo con Lux es especialmente fuerte, ya que ambos comparten un profundo amor por su familia y su nación. Además, Garen tiene una relación de respeto mutuo con otros campeones de Demacia, como Fiora y Xin Zhao.</p>
+                    <p>Garen mantiene vínculos estrechos dentro de la sociedad demaciana: su relación más íntima es con Lux, su hermana, cuya naturaleza mágica y decisiones políticas han generado conflictos y protección fraternal a lo largo del tiempo. También ha colaborado con figuras como Jarvan IV en campañas oficiales del reino, y mantiene una relación profesional de respeto con campeones como Xin Zhao o Fiora. En el terreno de los enfrentamientos, Garen suele chocar con campeones de naciones rivales como Noxus, pero sus lazos muestran su faceta más humana: camaradería, lealtad y responsabilidad compartida.</p>
                 </div>
             </div>
         </section>
@@ -116,13 +123,29 @@
                 </video>
                 <p id="texto">texto</p>
             </div>
-            
         </section> 
 
-        <footer>
-            <p>&copy; 2026 Santino Trevisano Garen. Todos los derechos reservados.</p>
-        </footer>
+        <section id="skins" class="divs skins-section">
+            <h2>Skins</h2>
+            <div class="skins-carousel">
+                <div class="skins-display">
+                    <figure class="skins-figure">
+                        <img src="img/skins/Garen_BattleAcademiaSkin.jpg" alt="Garen Battle Academia">
+                        <figcaption>
+                            <h3>Battle Academia</h3>
+                            <p>Garen en un estilo inspirado en academias de élite y combate futurista.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="skins-thumbs"></div>
+            </div>
+        </section>
+        
     </div>
+        <footer>
+            <p>Trabajo hecho por Trevisano Santino :)</p>
+        </footer>
     <script src="script.js"></script>
+    </main>
 </body>
 </html> 
