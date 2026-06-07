@@ -177,7 +177,7 @@ nav.abierto a {
 
 .hero-garen h1 {
     font-size: clamp(3rem, 10vw, 6rem); 
-    color: var(--blanco-pureza);
+    color: var(--dorado-justicia);
     text-transform: uppercase;
     margin: 0;
     text-shadow: 0 0 20px rgba(0,0,0,0.9);
@@ -212,6 +212,7 @@ h2 {
     border-left-width: 16px;
     padding-left: 24px;
     color: var(--dorado-justicia);
+    font-size: 2.7rem;
 }
 
 #habilidades {
