@@ -454,8 +454,11 @@ footer {
     border-top: 2px solid var(--dorado-justicia);
     color: var(--blanco-pureza);
     font-size: 1.2rem;
-    font-weight: bold;
     background-color: var(--negro-fondo);
+}
+
+footer strong{
+    font-weight: bold;
 }
 
 
@@ -483,7 +486,6 @@ footer {
         gap: 25px;
     }
 
-    /* Responsive rules for skins section */
     .skins-display {
         display: grid;
         grid-template-columns: 1fr;
@@ -561,6 +563,10 @@ footer {
         background-size: 100% 1000%;
     }
 
+    .divs{
+        margin-top: 30px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -632,5 +638,22 @@ footer {
         background: url('img/espadascroll.png') center/cover no-repeat;
         background-size: 110% 800%;
     }
+
+    .divs img {
+        margin: 5px 0 5px 0;
+    }
+
+    .divs p {
+        margin: 10px 0;
+    }
+
+    #skins img {
+        margin: 0;
+    }
+
+    #hero img {
+        margin: 0;
+    }
+
     
 }
