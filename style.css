@@ -417,7 +417,6 @@ h2 {
     .skins-thumb.active,
     .skins-thumb:hover {
         border-color: var(--dorado-justicia);
-        transform: translateY(-3px);
     }
 
     .skins-thumb img {
