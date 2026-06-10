@@ -155,8 +155,6 @@ var displayImage = document.querySelector('.skins-figure img');
 var displayTitle = document.querySelector('.skins-figure h3');
 var displayDesc = document.querySelector('.skins-figure p');
 var thumbContainer = document.querySelector('.skins-thumbs');
-var prevSkinButton = document.querySelector('.skins-nav.prev');
-var nextSkinButton = document.querySelector('.skins-nav.next');
 
 if (thumbContainer) {
     skins.forEach(function(skin, index) {
@@ -192,18 +190,6 @@ function updateSkin(index) {
     if (displayDesc) displayDesc.textContent = skin.desc;
     thumbButtons.forEach(function(button) {
         button.classList.toggle('active', Number(button.dataset.index) === index);
-    });
-}
-
-if (prevSkinButton) {
-    prevSkinButton.addEventListener('click', function() {
-        updateSkin(currentSkinIndex - 1);
-    });
-}
-
-if (nextSkinButton) {
-    nextSkinButton.addEventListener('click', function() {
-        updateSkin(currentSkinIndex + 1);
     });
 }
 
