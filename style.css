@@ -538,10 +538,6 @@ nav.abierto a {
     scroll-margin-top: 120px;
 }
 
-#video-container:hover{
-transform: scale(1.01);
-}
-
 #video-container p {
     padding: 30px;
     background: rgba(255,255,255,0.03);
@@ -561,6 +557,7 @@ img {
 }
 
 video {
+    padding: 5px;
     width: auto;
     max-width: 100%;
     height: auto;

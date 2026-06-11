@@ -17,30 +17,30 @@ function irAlVideo() {
 }
 
 document.getElementById('perseverancia').addEventListener('click', function() {
-    mostrarVideo('vid/pasiva.mp4', 'Regenera salud de forma pasiva cuando no recibe daño por un tiempo, lo que le permite mantenerse en la línea y recuperarse entre intercambios.');
+    mostrarVideo('https://lol.dyn.riotcdn.net/x/videos/champion-abilities/0086/ability_0086_P1.mp4', 'Regenera salud de forma pasiva cuando no recibe daño por un tiempo, lo que le permite mantenerse en la línea y recuperarse entre intercambios.');
     irAlVideo();
 });
 
 document.getElementById('goledecisivo').addEventListener('click', function() {
-    mostrarVideo('vid/Q.mp4', 'Ejecuta un ataque potenciado que inflige daño adicional y silencia brevemente al objetivo, ideal para interrumpir hechizos o ganar ventaja en un duelo.');
+    mostrarVideo('https://lol.dyn.riotcdn.net/x/videos/champion-abilities/0086/ability_0086_Q1.mp4', 'Ejecuta un ataque potenciado que inflige daño adicional y silencia brevemente al objetivo, ideal para interrumpir hechizos o ganar ventaja en un duelo.');
     irAlVideo();
 });
 
 document.getElementById('coraje').addEventListener('click', function() {
-    mostrarVideo('vid/W.mp4', 'Otorga un escudo temporal y reducción de daño, aumentando su capacidad para resistir golpes y mantenerse en la línea frontal durante peleas prolongadas.'); 
+    mostrarVideo('https://lol.dyn.riotcdn.net/x/videos/champion-abilities/0086/ability_0086_W1.mp4', 'Otorga un escudo temporal y reducción de daño, aumentando su capacidad para resistir golpes y mantenerse en la línea frontal durante peleas prolongadas.'); 
     irAlVideo();
 });
 
 document.getElementById('juicio').addEventListener('click', function() {
-    mostrarVideo('vid/E.mp4', 'Garen hace girar su espada rápidamente a su alrededor e inflige daño físico a los enemigos cercanos.');
+    mostrarVideo('https://lol.dyn.riotcdn.net/x/videos/champion-abilities/0086/ability_0086_E1.mp4', 'Garen hace girar su espada rápidamente a su alrededor e inflige daño físico a los enemigos cercanos.');
     irAlVideo();
 });
 
 
 document.getElementById('justicia').addEventListener('click', function() {
-    mostrarVideo('vid/R.mp4', 'Garen invoca el poder de Demacia para intentar ejecutar a un campeón enemigo.');
+    mostrarVideo('https://lol.dyn.riotcdn.net/x/videos/champion-abilities/0086/ability_0086_R1.mp4', 'Garen invoca el poder de Demacia para intentar ejecutar a un campeón enemigo.');
     irAlVideo();
-});
+}); 
 
 function toggleMenu() {
     var nav = document.getElementById("menu");
