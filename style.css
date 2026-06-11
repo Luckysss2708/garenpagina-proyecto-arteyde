@@ -558,6 +558,7 @@ footer strong{
         height: 250px; 
         width: 100%;
         max-width: 100%;
+        box-sizing: border-box;
     }
 
     section { 
@@ -570,7 +571,7 @@ footer strong{
     }
 
     video {
-        max-width: 100%;
+        max-width: 90%;
         height: auto;
     }
 
@@ -591,6 +592,7 @@ footer strong{
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: 3fr;
         gap: 20px; /* Más separación para que no estén pegadas */
+        max-width: 100%;
     }
 
     #justicia {
@@ -672,5 +674,4 @@ footer strong{
         max-width: 90%;
         height: auto;
     }
-    
-}
+} 
