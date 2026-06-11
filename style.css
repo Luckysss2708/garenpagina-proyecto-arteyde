@@ -323,72 +323,76 @@ h2 {
     margin-top: 10px;
 }
 
-.texto-foto-derecha {
+.texto-foto-derecha,
+.texto-foto-izquierda {
     display: grid;
-    grid-template-columns: 2fr 1fr;
     gap: 22px;
-    align-items: center;
+    align-items: stretch;
+}
+
+.texto-foto-derecha {
+    grid-template-columns: 2fr 1fr;
 }
 
 .texto-foto-izquierda {
-    display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 22px;
+}
+
+.texto-foto-derecha > div,
+.texto-foto-izquierda > div {
+    min-height: 0;
+}
+
+.texto-foto-derecha > div:first-child,
+.texto-foto-izquierda > div:last-child {
+    display: flex;
     align-items: center;
-}
-
-.texto-foto-derecha img, 
-.texto-foto-izquierda img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border: 2px solid var(--dorado-justicia);
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
-}
-
-.texto-foto-derecha img, 
-.texto-foto-izquierda img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border: 2px solid var(--dorado-justicia);
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
-    box-sizing: border-box; 
-}
-
-
-.divs p {
-    background: rgba(255,255,255,0.03);
-    padding: 20px; 
+    padding: 20px;
+    min-height: 350px;
+    max-height: 350px;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.05);
     border: 1px solid rgba(200,155,60,0.2);
     border-radius: 4px;
-    margin-bottom: 80px;
-    line-height: 2;
+    box-sizing: border-box;
 }
 
-.divs strong {
-    color: var(--dorado-justicia);
+.texto-foto-derecha > div:first-child p,
+.texto-foto-izquierda > div:last-child p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
 }
-    .skins-section .skins-carousel {
-        display: grid;
-        gap: 18px;
-        justify-items: center;
-        margin: auto;
-        max-width: 850px;
-        max-height: 850px;
-    }
 
-    .skins-display {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-    }
+.texto-foto-derecha img,
+.texto-foto-izquierda img {
+    width: 100%;
+    max-height: 350px;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid var(--dorado-justicia);
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+.skins-section .skins-carousel {
+    display: grid;
+    gap: 18px;
+    justify-items: center;
+    margin: auto;
+    max-width: 850px;
+    max-height: 850px;
+}
+
+.skins-display {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
 
     .skins-figure {
         margin: 0;
@@ -611,17 +615,31 @@ footer strong{
 
     .texto-foto-derecha, 
     .texto-foto-izquierda {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        align-items: start;
     }
 
     .texto-foto-derecha img, 
     .texto-foto-izquierda img {
-        height: 250px; 
         width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
+        height: auto;
+        max-height: 220px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .texto-foto-derecha > div:first-child,
+    .texto-foto-izquierda > div:first-child,
+    .texto-foto-derecha > div:last-child,
+    .texto-foto-izquierda > div:last-child {
+        min-width: 0;
+    }
+
+    .texto-foto-derecha p,
+    .texto-foto-izquierda p {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
 
     section { 
@@ -705,7 +723,29 @@ footer strong{
 
     .texto-foto-derecha, 
     .texto-foto-izquierda {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-items: start;
+    }
+
+    .texto-foto-derecha img, 
+    .texto-foto-izquierda img {
+        width: 100%;
+        max-height: 180px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .texto-foto-derecha p,
+    .texto-foto-izquierda p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .texto-foto-derecha > div:first-child,
+    .texto-foto-izquierda > div:last-child {
+        min-height: 180px;
+        max-height: 180px;
     }
 
     .skins-thumbs::-webkit-scrollbar {

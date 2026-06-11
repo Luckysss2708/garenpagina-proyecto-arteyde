@@ -1,0 +1,39 @@
+Cambios realizados en el proyecto Garenpagina:
+
+1. Overflow horizontal y scroll lateral
+- Añadido `overflow-x: hidden` a `html` y `body`.
+- Establecido `box-sizing: border-box` globalmente.
+- Normalizadas las reglas de ancho para `header`, `nav`, `.container`, `section`, `footer`, `img`, `video` y `figure`.
+- Ajustado el `video` para que use `max-width: 100%`, `width: auto` y no genere bordes adicionales con relleno.
+
+2. Header fijo y navegación
+- Cambiado `nav` a `position: fixed` con `top: 0`, `left: 0` y `width: 100%`.
+- Añadido `padding-top: 80px` en `body` para evitar que el contenido quede oculto detrás del header.
+
+3. Sección de video
+- Ajustado `#video-container` para que tenga `padding: 0`, `scroll-margin-top: 120px` y ancho máximo `1000px`.
+- El `video` ahora mantiene su tamaño original en lugar de forzar un ancho demasiado pequeño.
+- Establecido `video` con `box-sizing: border-box` y bordes pegados sin espacios blancos extra.
+
+4. Comportamiento de click en habilidades
+- Añadida función `irAlVideo()` en `script.js`.
+- Cada habilidad ahora activa el video correspondiente y realiza scroll suave hacia `#video-container`.
+- Ajustada la posición de scroll para centrar mejor el video en pantalla.
+
+5. Diseño responsivo de grid de habilidades
+- Corregido `@media (max-width: 1090px)` para usar un diseño responsivo más estable.
+- Cambiado a `flex-wrap: wrap` con `justify-content: center` y elementos de ancho adaptativo para evitar filas desalineadas.
+
+6. Texto e imagen lado a lado en pantallas pequeñas
+- Ajustadas las reglas de `.texto-foto-derecha` y `.texto-foto-izquierda` para estirar el contenido a la altura de la imagen.
+- Mejorada la presentación en `@media (max-width: 768px)` y `@media (max-width: 480px)` para mantener texto e imagen uno al lado del otro.
+- Limitado `max-height` de las imágenes y ajustado la fuente del texto para mejor legibilidad.
+
+7. Corrección de CSS corrupto
+- Restaurado el bloque de estilos de `.skins-section` y `.skins-display` que se había mezclado con la regla de imagen.
+
+Archivos modificados:
+- style.css
+- script.js
+
+Este resumen cubre los cambios solicitados hasta la fecha actual 2026-06-11.
