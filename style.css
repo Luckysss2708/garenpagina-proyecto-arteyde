@@ -95,6 +95,10 @@ nav a {
     display: none;
 }
 
+.skins-section {
+        padding-bottom: 20px;
+    } 
+
 .menu-btn {
     display: block;
     float: right;
@@ -373,6 +377,7 @@ h2 {
 .divs strong {
     color: var(--dorado-justicia);
 }
+
     .skins-section .skins-carousel {
         display: grid;
         gap: 18px;
@@ -643,6 +648,15 @@ footer strong{
     .divs { margin-top: 20px; }
     .habilidades-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 100%; }
     #justicia { grid-column: span 2; }
+
+    /* Reduce el espacio extra al final de la sección Skins en tabletas */
+    .skins-section {
+        padding-bottom: 20px;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
 }
 
 /* ==========================================================================
