@@ -1,3 +1,47 @@
+==========================================================================
+REPORTE DE CAMBIOS Y OPTIMIZACIONES CSS: RESPONSIVE DESIGN (TABLET Y MÓVIL)
+==========================================================================
+
+[OBJETIVO GENERAL]
+Mantener la estructura visual de dos columnas en las secciones de información con imágenes para los puntos de quiebre (media queries) de 768px y 480px, previniendo el apilamiento vertical, eliminando espacios vacíos en las imágenes y controlando el desborde de textos extensos mediante cajas de scroll internas y simétricas.
+
+--------------------------------------------------------------------------
+1. MANTENIMIENTO DE LA ESTRUCTURA BIDIMENSIONAL (GRID LADO A LADO)
+--------------------------------------------------------------------------
+* Problema previo: En pantallas de menos de 768px, el layout de las clases '.texto-foto-derecha' y '.texto-foto-izquierda' cambiaba a 'grid-template-columns: 1fr', provocando que el texto se posicionara arriba o abajo de la imagen.
+* Solución: Se eliminó el colapso a una columna. Ahora se mantiene de manera estricta el formato de dos columnas ('grid-template-columns: 1fr 1fr') tanto en tabletas como en teléfonos móviles.
+
+--------------------------------------------------------------------------
+2. GEOMETRÍA SIMÉTRICA Y CUADRADA (ASPECT-RATIO)
+--------------------------------------------------------------------------
+* Cambio implementado: Se aplicó la propiedad 'aspect-ratio: 1 / 1' de forma idéntica tanto a las etiquetas 'img' como a las etiquetas 'p' de estas secciones específicas.
+* Resultado: Ambos elementos (imagen y contenedor de texto) se renderizan como cuadrados perfectos en cualquier resolución de pantalla, logrando una armonía visual uniforme.
+
+--------------------------------------------------------------------------
+3. ELIMINACIÓN DE ESPACIOS EN BLANCO EN IMÁGENES (OBJECT-FIT)
+--------------------------------------------------------------------------
+* Problema previo: Al ajustar el tamaño, las imágenes generaban bandas vacías en los laterales o en los bordes superior/inferior para no deformarse.
+* Solución: Se cambió la propiedad de escalado a 'object-fit: cover' en las imágenes de las columnas. La imagen ahora rellena por completo el contenedor cuadrado de forma inteligente y centrada, eliminando los espacios en blanco.
+
+--------------------------------------------------------------------------
+4. CAJA DE TEXTO CON SCROLL INFINITO (OVERFLOW-Y)
+--------------------------------------------------------------------------
+* Cambio implementado: Se activó la propiedad 'overflow-y: auto' en los párrafos que acompañan a las imágenes.
+* Resultado: Si el volumen de texto descriptivo sobrepasa las dimensiones del cuadro cuadrado (especialmente crítico en el tamaño reducido de celulares), este no rompe el diseño ni empuja otros elementos hacia abajo. En su lugar, el texto se vuelve deslizable de manera infinita dentro de su propio contenedor mediante una barra de scroll vertical.
+
+--------------------------------------------------------------------------
+5. AISLAMIENTO DE ESTILOS Y CORRECCIÓN EN SECCIÓN SKINS
+--------------------------------------------------------------------------
+* Problema previo: Una regla demasiado genérica (aplicada a '.divs p') afectó accidentalmente al texto de la sección '#skins p', alterando su ancho y obligándolo a ser un cuadrado innecesario.
+* Solución: Se reestructuró la especificidad de los selectores en CSS. Los estilos de cajas cuadradas con scroll se asignaron estrictamente a '.texto-foto-derecha p' y '.texto-foto-izquierda p'. Con esto, los párrafos globales y de la galería de Skins recuperaron su flujo normal, centrado y responsivo original de la página.
+
+--------------------------------------------------------------------------
+6. PERSONALIZACIÓN ESTÉTICA DE LA BARRA DE DESPLAZAMIENTO
+--------------------------------------------------------------------------
+* Cambio implementado: Se añadieron selectores de pseudoelementos '::-webkit-scrollbar' y '::-webkit-scrollbar-thumb' específicos para las cajas de texto móvil.
+* Resultado: Las barras de scroll internas usan un grosor sutil (de 4px a 6px) y adoptan el color institucional '--dorado-justicia' para integrarse orgánicamente con la temática de Demacia de la interfaz.
+==========================================================================
+
 Cambios realizados en el proyecto Garenpagina:
 
 1. Overflow horizontal y scroll lateral
