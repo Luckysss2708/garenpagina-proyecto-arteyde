@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. VARIABLES DE ENTORNO Y CONFIGURACIÓN GLOBAL
+   1. VARIABLES DE ENTORNO Y CONFIGURACION GLOBAL
    ========================================================================== */
 :root {
     --azul-demacia: #05182b;
@@ -29,12 +29,12 @@ body {
     color: var(--blanco-pureza);
     font-family: 'Segoe UI', sans-serif;
     cursor: url('img/cursornormal-small.png') 0 0, auto;
-    padding-top: 80px;
+    padding-top: 80px; /* Espacio para que la barra fija no tape contenido */
 }
 
 
 /* ==========================================================================
-   2. MAQUETACIÓN GLOBAL Y CONTENEDORES BASE
+   2. MAQUETACION GLOBAL Y CONTENEDORES BASE
    ========================================================================== */
 header,
 nav,
@@ -85,18 +85,19 @@ footer strong {
 
 
 /* ==========================================================================
-   3. TIPOGRAFÍAS, TÍTULOS Y REGLAS DE HOVER
+   3. TIPOGRAFIAS, TITULOS Y REGLAS DE HOVER
    ========================================================================== */
 h2 {
     font-size: 2.5rem;
     font-style: italic;
-    border-left: 8px solid var(--dorado-justicia);
+    border-left: 8px solid var(--dorado-justicia); /* Linea lateral decorativa */
     padding-left: 20px;
     color: var(--dorado-justicia);
     margin-bottom: 40px;
     transition: all 0.3s ease;
 }
 
+/* Efecto al pasar el mouse por los bloques de texto */
 .divs:hover h2 {
     border-left-width: 16px;
     padding-left: 24px;
@@ -117,7 +118,7 @@ h2 {
     color: var(--dorado-justicia);
 }
 
-/* Cursores e interacciones generales */
+/* Cursores personalizados para elementos interactivos */
 a,
 button,
 .menu-btn,
@@ -134,7 +135,7 @@ a:hover,
 
 
 /* ==========================================================================
-   4. COMPONENTE: BARRA DE NAVEGACIÓN (NAV)
+   4. COMPONENTE: BARRA DE NAVEGACION
    ========================================================================== */
 nav {
     display: flex;
@@ -144,7 +145,7 @@ nav {
     padding: 15px 20px;
     background-color: var(--negro-fondo);
     min-height: 60px;
-    position: fixed;
+    position: fixed; /* Mantiene la barra fija arriba al hacer scroll */
     top: 0;
     left: 0;
     width: 100%;
@@ -163,9 +164,10 @@ nav {
 }
 
 nav a {
-    display: none;
+    display: none; /* Oculto por defecto, se maneja en menu lateral */
 }
 
+/* Contenedor del menu lateral (estilo de transicion) */
 nav .nav-links {
     box-sizing: border-box;
     position: fixed;
@@ -181,7 +183,7 @@ nav .nav-links {
     align-items: center;
     gap: 20px;
     z-index: 1001;
-    transform: translateX(100%);
+    transform: translateX(100%); /* Esconde el menu hacia la derecha */
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
@@ -200,6 +202,7 @@ nav .nav-links a {
     transition: all 0.3s;
 }
 
+/* Efectos hover para los enlaces del menu */
 nav a:hover {
     display: inline-block;
     border-color: var(--dorado-justicia);
@@ -208,7 +211,7 @@ nav a:hover {
     text-shadow: 0 0 10px rgba(200, 155, 60, 0.5);
 }
 
-/* Botón menú Hamburguesa */
+/* Boton de menu hamburguesa */
 .menu-btn {
     display: block;
     float: right;
@@ -235,9 +238,9 @@ nav a:hover {
     background-color: var(--blanco-pureza);
 }
 
-/* Estados activos del Menú (JS) */
+/* Clases de control para activar mediante JS */
 nav.abierto .nav-links {
-    transform: translateX(0);
+    transform: translateX(0); /* Muestra el menu lateral */
 }
 
 nav.abierto .menu-btn img {
@@ -262,7 +265,7 @@ nav.abierto a {
 
 
 /* ==========================================================================
-   5. SECCIÓN: HERO GAREN
+   5. SECCION: HERO GAREN
    ========================================================================== */
 .hero-garen {
     width: 100%;
@@ -279,7 +282,7 @@ nav.abierto a {
 }
 
 .hero-garen h1 {
-    font-size: clamp(3rem, 10vw, 6rem); 
+    font-size: clamp(3rem, 10vw, 6rem); /* Ajuste de tamano fluido */
     color: var(--dorado-justicia);
     text-transform: uppercase;
     margin: 0;
@@ -290,7 +293,7 @@ nav.abierto a {
 
 
 /* ==========================================================================
-   6. SECCIÓN: HABILIDADES (GRID & COMPORTAMIENTO)
+   6. SECCION: HABILIDADES 
    ========================================================================== */
 #habilidades {
     padding-bottom: 80px;
@@ -307,12 +310,14 @@ nav.abierto a {
     color: var(--dorado-justicia);
 }
 
+/* Rejilla adaptativa para las tarjetas de habilidad */
 .habilidades-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 40px;
 }
 
+/* Tarjeta individual de habilidad */
 .habilidad-div { 
     background: rgba(255,255,255,0.03);
     padding: 20px; 
@@ -322,8 +327,6 @@ nav.abierto a {
     margin-bottom: 20px;
     transform-origin: center; 
     transition: transform 1.5s, box-shadow 1.5s; 
-    
-    /* Centrado automático de alturas internas */
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
@@ -335,6 +338,7 @@ nav.abierto a {
     background: rgba(200,155,60,0.05);
     border-color: var(--dorado-justicia);
     box-shadow: 0 0 18px rgba(200,155,60,.9);
+    transform: scale(1.01) translateY(-3px);  
 }
 
 .habilidad-div img {
@@ -347,6 +351,7 @@ nav.abierto a {
     margin-right: auto;
 }
 
+/* Estilo para la letra o tecla asignada (Q, W, E, R) */
 .tecla {
     display: block;
     font-weight: bold;
@@ -357,8 +362,9 @@ nav.abierto a {
 
 
 /* ==========================================================================
-   7. SECCIÓN: BLOQUES DE INFORMACIÓN (TEXTO-FOTO ESCRITORIO)
+   7. SECCION: BLOQUES DE INFORMACION 
    ========================================================================== */
+/* Distribucion de texto a un lado e imagen al otro */
 .texto-foto-derecha {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -387,12 +393,13 @@ nav.abierto a {
 
 
 /* ==========================================================================
-   8. SECCIÓN: GALERÍA DE SKINS (ESCRITORIO - FIX ESPACIO VERDE)
+   8. SECCION: GALERIA DE SKINS 
    ========================================================================== */
 .skins-section {
     padding-bottom: 20px;
 }
 
+/* Contenedor estructural del carrusel */
 .skins-section .skins-carousel {
     display: grid;
     gap: 18px;
@@ -412,6 +419,7 @@ nav.abierto a {
     width: 100%;
 }
 
+/* Marco principal para la skin en pantalla grande */
 .skins-figure {
     margin: 0;
     border: 2px solid var(--dorado-justicia);
@@ -445,7 +453,7 @@ nav.abierto a {
     margin: 20px 40px;
 }
 
-/* Navegadores y flechas del carrusel */
+/* Botones de navegacion del carrusel */
 .skins-nav {
     border: none;
     background: rgba(200,155,60,0.95);
@@ -464,7 +472,7 @@ nav.abierto a {
     background: var(--dorado-justicia);
 }
 
-/* Miniaturas con scroll de espada */
+/* Contenedor horizontal para las miniaturas inferiores */
 .skins-thumbs {
     padding-left: 40px;
     margin-top: 40px;
@@ -474,11 +482,12 @@ nav.abierto a {
     justify-content: flex-start;
     gap: 14px;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow-x: auto; /* Permite scroll horizontal */
     padding-bottom: 10px;
     align-items: center;
 }
 
+/* Personalizacion del scrollbar del carrusel */
 .skins-thumbs::-webkit-scrollbar {
     height: 40px;
 }
@@ -488,6 +497,7 @@ nav.abierto a {
     background-size: 60% 1000%;
 }
 
+/* Estilo base de cada miniatura individual */
 .skins-thumb {
     border: 2px solid transparent;
     background: none;
@@ -495,14 +505,16 @@ nav.abierto a {
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    transition: border-color 0.25s ease, transform 0.25s ease;
-    flex: 0 0 auto;
+    transition: border-color 0.5s ease, transform 0.5s ease;
     min-width: 110px;
+    flex: 0 0 auto;
 }
 
+/* Estado de miniatura seleccionada o con el mouse encima */
 .skins-thumb.active,
 .skins-thumb:hover {
     border-color: var(--dorado-justicia);
+    transform: scale(1.01) translateY(-1px);  
 }
 
 .skins-thumb img {
@@ -514,7 +526,7 @@ nav.abierto a {
 
 
 /* ==========================================================================
-   9. SECCIÓN: MULTIMEDIA (VIDEO CONTAINER)
+   9. SECCION: MULTIMEDIA 
    ========================================================================== */
 #video-container {
     width: 100%;
@@ -526,7 +538,6 @@ nav.abierto a {
 }
 
 #video-container:hover{
-
 transform: scale(1.01);
 }
 
@@ -573,11 +584,11 @@ video {
     }
 
     .habilidades-grid > .habilidad-div {
-        flex: 0 1 calc(33.333% - 26.66px);
+        flex: 0 1 calc(33.333% - 26.66px); /* 3 columnas por fila */
     }
 }
 
-/* --- DISPOSITIVOS MÓVILES TIPO TABLET (HASTA 768px) --- */
+/* --- DISPOSITIVOS MOVILES TIPO TABLET (HASTA 768px) --- */
 @media (max-width: 768px) {
     header {
         min-height: auto; 
@@ -593,6 +604,7 @@ video {
         height: auto;
     }
 
+    /* Cambio de distribucion a bloques cuadrados en tabletas */
     .texto-foto-derecha, 
     .texto-foto-izquierda {
         display: grid;
@@ -616,6 +628,7 @@ video {
         margin-bottom: 0;
     }
 
+    /* Formato de texto con scroll interno para mantener simetria */
     .texto-foto-derecha p,
     .texto-foto-izquierda p {
         margin: 0;
@@ -662,7 +675,7 @@ video {
     }
     
     .skins-nav { 
-        display: none; 
+        display: none; /* Se ocultan las flechas en tabletas */
     }
     
     .skins-thumbs { 
@@ -707,7 +720,7 @@ video {
     
     .habilidades-grid { 
         display: grid; 
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
         gap: 20px; 
         max-width: 100%; 
     }
@@ -725,7 +738,7 @@ video {
     }
 }
 
-/* --- DISPOSITIVOS MÓVILES TIPO CELULAR (HASTA 480px) --- */
+/* --- DISPOSITIVOS MOVILES TIPO CELULAR (HASTA 480px) --- */
 @media (max-width: 480px) {
     .texto-foto-derecha,
     .texto-foto-izquierda {
@@ -733,6 +746,7 @@ video {
         grid-template-columns: 1fr 1fr; 
         gap: 10px;
         margin-bottom: 30px;
+        align-items: center;
     }
 
     h2 {
@@ -748,6 +762,7 @@ video {
         margin: 0;
     }
 
+    /* Reduccion de fuente para pantallas muy pequenas */
     .texto-foto-derecha p,
     .texto-foto-izquierda p {
         margin: 0;
