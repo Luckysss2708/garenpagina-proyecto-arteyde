@@ -10,7 +10,7 @@
 
 * {
     box-sizing: border-box;
-}
+} 
 
 html,
 body {
@@ -499,6 +499,7 @@ nav.abierto a {
 
 /* Estilo base de cada miniatura individual */
 .skins-thumb {
+    padding-top: 10px;
     border: 2px solid transparent;
     background: none;
     padding: 0;
