@@ -4,15 +4,11 @@
     --blanco-pureza: #ffffff;
     --negro-fondo: #09111f;
 }
-
 body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
     background-color: var(--azul-demacia);
     color: var(--blanco-pureza);
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    overflow-x: hidden;
     width: 100%;
     cursor: url('img/cursornormal-small.png') 0 0, auto;
 }
@@ -187,11 +183,11 @@ nav.abierto a {
     font-style: italic;
 }
 
+
 .container {
     max-width: 1200px; 
     margin: auto;
     padding: 10px 20px;
-    display: grid;
 }
 
 section { 
@@ -239,6 +235,24 @@ h2 {
     transition: all 0.3s;
     margin-bottom: 20px;
     transform-origin: center; transition: transform 1.5s, box-shadow 1.5s; 
+}
+
+.habilidad-div { 
+    background: rgba(255,255,255,0.03);
+    padding: 20px; /* Reducimos un poco el padding para que no rompa en pantallas chicas */
+    border: 1px solid var(--dorado-justicia);
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    transform-origin: center; 
+    transition: transform 1.5s, box-shadow 1.5s; 
+    
+    /* Sistema para emparejar alturas automáticamente */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja la tecla (Q, W, E, R) siempre abajo de todo */
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .habilidad-div:hover {
@@ -299,6 +313,18 @@ h2 {
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     margin-bottom: 20px;
+}
+
+.texto-foto-derecha img, 
+.texto-foto-izquierda img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border: 2px solid var(--dorado-justicia);
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    box-sizing: border-box; 
 }
 
 
@@ -466,10 +492,6 @@ footer strong{
 
 
 @media (max-width: 768px) {
-    body {
-        grid-template-rows: auto 1fr auto;
-    }
-
     header {
         min-height: auto; 
     }
@@ -482,11 +504,6 @@ footer strong{
         width: 100%;
         height: auto;
         aspect-ratio: 17 / 10; 
-    }
-
-    .habilidades-grid {
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 25px;
     }
 
     .skins-display {
@@ -513,11 +530,6 @@ footer strong{
         height: 46px;
     }
 
-    .skins-nav.prev,
-    .skins-nav.next {
-        margin: 0;
-    }
-
     .skins-thumbs {
         padding-left: 10px;
         margin-top: 18px;
@@ -530,30 +542,35 @@ footer strong{
     }
 
     #justicia, #juicio {
-        margin-left: 50%;
-        width: 65%;
+        margin-left: 0;
+        width: 100%;
     }
 
     .texto-foto-derecha, 
     .texto-foto-izquierda {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: 1fr;
         gap: 15px;
         align-items: center;
     }
 
     .texto-foto-derecha img, 
     .texto-foto-izquierda img {
-        height: auto;
+        height: 250px; 
+        width: 100%;
         max-width: 100%;
     }
 
     section { 
-        margin-top: 60px; 
+        margin-top: 40px; 
+        padding-bottom: 40px;
+    }
+
+    .divs p {
+        margin-bottom: 30px;
     }
 
     video {
-        max-width: 90%;
+        max-width: 100%;
         height: auto;
     }
 
@@ -567,17 +584,22 @@ footer strong{
     }
 
     .divs{
-        margin-top: 30px;
+        margin-top: 20px;
+    }
+    .habilidades-grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 3fr;
+        gap: 20px; /* Más separación para que no estén pegadas */
     }
 
+    #justicia {
+        grid-column: span 2;
+    }
 }
 
-@media (max-width: 480px) {
-    .habilidades-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
 
+@media (max-width: 480px) {
     .skins-display {
         grid-template-columns: 1fr;
         gap: 8px;
@@ -610,22 +632,10 @@ footer strong{
         gap: 8px;
     }
 
-    .habilidad-div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        box-sizing: border-box;
-        padding: 15px;
-    }
 
     #juicio, #justicia {
         margin-left: 0;
         width: 100%;
-    }
-
-    #justicia {
-        grid-column: span 2;
     }
 
     .texto-foto-derecha, 
@@ -658,5 +668,9 @@ footer strong{
         margin: 0;
     }
 
+    video {
+        max-width: 90%;
+        height: auto;
+    }
     
 }
