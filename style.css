@@ -243,7 +243,7 @@ h2 {
     border-left-width: 16px;
     padding-left: 24px;
     color: var(--dorado-justicia);
-    font-size: 2.7rem;
+    transform: scale(1.01);
 }
 
 #habilidades {
@@ -323,76 +323,72 @@ h2 {
     margin-top: 10px;
 }
 
-.texto-foto-derecha,
+.texto-foto-derecha {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 22px;
+    align-items: center;
+}
+
 .texto-foto-izquierda {
     display: grid;
-    gap: 22px;
-    align-items: stretch;
-}
-
-.texto-foto-derecha {
-    grid-template-columns: 2fr 1fr;
-}
-
-.texto-foto-izquierda {
     grid-template-columns: 1fr 2fr;
-}
-
-.texto-foto-derecha > div,
-.texto-foto-izquierda > div {
-    min-height: 0;
-}
-
-.texto-foto-derecha > div:first-child,
-.texto-foto-izquierda > div:last-child {
-    display: flex;
+    gap: 22px;
     align-items: center;
-    padding: 20px;
-    min-height: 350px;
-    max-height: 350px;
-    overflow-y: auto;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(200,155,60,0.2);
-    border-radius: 4px;
-    box-sizing: border-box;
 }
 
-.texto-foto-derecha > div:first-child p,
-.texto-foto-izquierda > div:last-child p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.texto-foto-derecha img,
+.texto-foto-derecha img, 
 .texto-foto-izquierda img {
     width: 100%;
-    max-height: 350px;
-    height: auto;
+    height: 350px;
     object-fit: cover;
     border: 2px solid var(--dorado-justicia);
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    margin-bottom: 0;
-    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
-.skins-section .skins-carousel {
-    display: grid;
-    gap: 18px;
-    justify-items: center;
-    margin: auto;
-    max-width: 850px;
-    max-height: 850px;
-}
-
-.skins-display {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    gap: 10px;
+.texto-foto-derecha img, 
+.texto-foto-izquierda img {
     width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border: 2px solid var(--dorado-justicia);
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    box-sizing: border-box; 
 }
+
+
+.divs p {
+    background: rgba(255,255,255,0.03);
+    padding: 20px; 
+    border: 1px solid rgba(200,155,60,0.2);
+    border-radius: 4px;
+    margin-bottom: 80px;
+    line-height: 2;
+}
+
+.divs strong {
+    color: var(--dorado-justicia);
+}
+    .skins-section .skins-carousel {
+        display: grid;
+        gap: 18px;
+        justify-items: center;
+        margin: auto;
+        max-width: 850px;
+        max-height: 850px;
+    }
+
+    .skins-display {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
 
     .skins-figure {
         margin: 0;
@@ -558,6 +554,9 @@ footer strong{
   }
 }
 
+/* ==========================================================================
+   MEDIA QUERY: TABLETS (HASTA 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
     header {
         min-height: auto; 
@@ -565,7 +564,7 @@ footer strong{
 
     #hero {
         background-color: var(--negro-fondo); 
-        background-size: contain;             
+        background-size: contain;                     
         background-repeat: no-repeat;         
         background-position: center;
         width: 100%;
@@ -573,208 +572,146 @@ footer strong{
         aspect-ratio: 17 / 10; 
     }
 
-    .skins-display {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .skins-figure {
-        width: 100%;
-    }
-
-    .skins-figure img {
-        height: 300px;
-        width: 100%;
-    }
-
-    .skins-nav {
-        display: none;
-        position: static;
-        width: 46px;
-        height: 46px;
-    }
-
-    .skins-thumbs {
-        padding-left: 10px;
-        margin-top: 18px;
-        width: 100%;
-        gap: 10px;
-    }
-
-    .skins-thumb {
-        min-width: 90px;
-    }
-
-    #justicia, #juicio {
-        margin-left: 0;
-        width: 100%;
-    }
-
+    /* Mantenemos dos columnas al lado de la otra */
     .texto-foto-derecha, 
     .texto-foto-izquierda {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        align-items: start;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px;
+        align-items: stretch;
+        margin-bottom: 40px;
     }
 
+    .texto-foto-izquierda {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Forzamos a que la imagen sea un cuadrado perfecto */
     .texto-foto-derecha img, 
     .texto-foto-izquierda img {
         width: 100%;
         height: auto;
-        max-height: 220px;
-        object-fit: cover;
+        aspect-ratio: 1 / 1; 
+        object-fit: cover;   
+        box-sizing: border-box;
+        margin-bottom: 0;
+    }
+
+    /* CAMBIO CLAVE: Solo el párrafo que acompaña a la imagen se vuelve cuadrado con scroll */
+    .texto-foto-derecha p,
+    .texto-foto-izquierda p {
+        margin: 0;
+        width: 100%;
+        aspect-ratio: 1 / 1; 
+        overflow-y: auto;    
+        line-height: 1.6;
+        padding: 20px;
+        box-sizing: border-box;
+        background: rgba(255,255,255,0.03); /* Mantiene tu fondo oscuro */
+        border: 1px solid rgba(200,155,60,0.2);
         border-radius: 4px;
     }
 
-    .texto-foto-derecha > div:first-child,
-    .texto-foto-izquierda > div:first-child,
-    .texto-foto-derecha > div:last-child,
-    .texto-foto-izquierda > div:last-child {
-        min-width: 0;
+    /* Estilo para la barra de desplazamiento interna de estos párrafos específicos */
+    .texto-foto-derecha p::-webkit-scrollbar,
+    .texto-foto-izquierda p::-webkit-scrollbar {
+        width: 6px;
+    }
+    .texto-foto-derecha p::-webkit-scrollbar-thumb,
+    .texto-foto-izquierda p::-webkit-scrollbar-thumb {
+        background-color: var(--dorado-justicia);
+        border-radius: 4px;
     }
 
-    .texto-foto-derecha p,
-    .texto-foto-izquierda p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    section { 
-        margin-top: 40px; 
-        padding-bottom: 40px;
-    }
-
+    /* Párrafos normales dentro de .divs (Como el de Skins) quedan limpios */
     .divs p {
+        margin-bottom: 40px; /* Restablece un comportamiento normal */
+    }
+
+    /* Resto de tus estilos de tablet sin cambios... */
+    .skins-display { display: grid; grid-template-columns: 1fr; gap: 10px; width: 100%; }
+    .skins-figure { width: 100%; }
+    .skins-figure img { height: 300px; width: 100%; }
+    .skins-nav { display: none; }
+    .skins-thumbs { padding-left: 10px; margin-top: 18px; width: 100%; gap: 10px; }
+    .skins-thumb { min-width: 90px; }
+    #justicia, #juicio { margin-left: 0; width: 100%; }
+    section { margin-top: 40px; padding-bottom: 40px; }
+    video { max-width: 90%; height: auto; }
+    .skins-thumbs::-webkit-scrollbar { height: 40px; }
+    .skins-thumbs::-webkit-scrollbar-thumb { background: url('img/espadascroll.png') center/cover no-repeat; background-size: 100% 1000%; }
+    .divs { margin-top: 20px; }
+    .habilidades-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 100%; }
+    #justicia { grid-column: span 2; }
+}
+
+/* ==========================================================================
+   MEDIA QUERY: CELULARES (HASTA 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .texto-foto-derecha,
+    .texto-foto-izquierda {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px;
         margin-bottom: 30px;
     }
 
-    video {
-        max-width: 90%;
-        height: auto;
+    h2{
+        font-size: 2rem;
     }
 
-    .skins-thumbs::-webkit-scrollbar {
-        height: 40px;
-    }
-
-    .skins-thumbs::-webkit-scrollbar-thumb {
-        background: url('img/espadascroll.png') center/cover no-repeat;
-        background-size: 100% 1000%;
-    }
-
-    .divs{
-        margin-top: 20px;
-    }
-    .habilidades-grid {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: 3fr;
-        gap: 20px; 
-        max-width: 100%;
-    }
-
-    #justicia {
-        grid-column: span 2;
-    }
-}
-
-
-@media (max-width: 480px) {
-    .skins-display {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-
-    .skins-figure {
-        width: 100%;
-    }
-
-    .skins-figure img {
-        height: 220px;
-        width: 100%;
-    }
-
-    .skins-nav {
-        display: none;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-        position: static;
-    }
-
-    .skins-thumb img {
-        width: 86px !important;
-        height: 56px !important;
-    }
-
-    .skins-thumbs {
-        padding-left: 6px;
-        gap: 8px;
-    }
-
-
-    #juicio, #justicia {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    .texto-foto-derecha, 
-    .texto-foto-izquierda {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        align-items: start;
-    }
 
     .texto-foto-derecha img, 
     .texto-foto-izquierda img {
         width: 100%;
-        max-height: 180px;
         height: auto;
+        aspect-ratio: 1 / 1;
         object-fit: cover;
+        margin: 0;
     }
 
+    /* CAMBIO CLAVE: Solo el párrafo que acompaña a la imagen se vuelve cuadrado con scroll */
     .texto-foto-derecha p,
     .texto-foto-izquierda p {
-        font-size: 0.9rem;
+        margin: 0;
+        width: 100%;
+        aspect-ratio: 1 / 1; 
+        overflow-y: auto;    
+        font-size: 0.9rem;   
         line-height: 1.4;
+        padding: 10px;
+        box-sizing: border-box;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(200,155,60,0.2);
+        border-radius: 4px;
     }
 
-    .texto-foto-derecha > div:first-child,
-    .texto-foto-izquierda > div:last-child {
-        min-height: 180px;
-        max-height: 180px;
+    .texto-foto-derecha p::-webkit-scrollbar,
+    .texto-foto-izquierda p::-webkit-scrollbar {
+        width: 4px;
+    }
+    .texto-foto-derecha p::-webkit-scrollbar-thumb,
+    .texto-foto-izquierda p::-webkit-scrollbar-thumb {
+        background-color: var(--dorado-justicia);
+        border-radius: 2px;
     }
 
-    .skins-thumbs::-webkit-scrollbar {
-        height: 40px;
-    }
-
-    .skins-thumbs::-webkit-scrollbar-thumb {
-        background: url('img/espadascroll.png') center/cover no-repeat;
-        background-size: 110% 800%;
-    }
-
-    .divs img {
-        margin: 5px 0 5px 0;
-    }
-
+    /* Evitamos que afecte a otros textos sueltos en celular */
     .divs p {
         margin: 10px 0;
     }
 
-    #skins img {
-        margin: 0;
-    }
-
-    #hero img {
-        margin: 0;
-    }
-
-    video {
-        max-width: 90%;
-        height: auto;
-    }
-} 
+    /* Resto de tus estilos de celular sin cambios... */
+    .skins-display { grid-template-columns: 1fr; gap: 8px; }
+    .skins-figure { width: 100%; }
+    .skins-figure img { height: 220px; width: 100%; }
+    .skins-nav { display: none; }
+    .skins-thumb img { width: 86px !important; height: 56px !important; }
+    .skins-thumbs { padding-left: 6px; gap: 8px; }
+    #juicio, #justicia { margin-left: 0; width: 100%; }
+    .skins-thumbs::-webkit-scrollbar { height: 40px; }
+    .skins-thumbs::-webkit-scrollbar-thumb { background: url('img/espadascroll.png') center/cover no-repeat; background-size: 110% 800%; }
+    #skins img, #hero img { margin: 0; }
+    video { max-width: 90%; height: auto; }
+}
