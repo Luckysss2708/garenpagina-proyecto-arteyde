@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. VARIABLES DE ENTORNO Y CONFIGURACIÓN GLOBAL
+   ========================================================================== */
 :root {
     --azul-demacia: #05182b;
     --dorado-justicia: #c89b3c;
@@ -20,6 +23,19 @@ html {
     cursor: url('img/cursornormal-small.png') 0 0, auto;
 }
 
+body {
+    min-height: 100vh;
+    background-color: var(--azul-demacia);
+    color: var(--blanco-pureza);
+    font-family: 'Segoe UI', sans-serif;
+    cursor: url('img/cursornormal-small.png') 0 0, auto;
+    padding-top: 80px;
+}
+
+
+/* ==========================================================================
+   2. MAQUETACIÓN GLOBAL Y CONTENEDORES BASE
+   ========================================================================== */
 header,
 nav,
 .container,
@@ -32,11 +48,76 @@ figure {
     max-width: 100%;
 }
 
-.hero-garen {
-    width: 100%;
-    overflow: hidden;
+header {
+    min-height: 100vh;
 }
 
+.container {
+    max-width: 1200px; 
+    margin: auto;
+    padding: 10px 20px;
+}
+
+.container h1 {
+    text-align: center; 
+}
+
+section { 
+    padding-bottom: 100px;
+    margin-top: 80px;
+    border-bottom: 2px solid var(--dorado-justicia); 
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid var(--dorado-justicia);
+    color: var(--blanco-pureza);
+    font-size: 1.2rem;
+    background-color: var(--negro-fondo);
+}
+
+footer strong {
+    font-weight: bold;
+}
+
+
+/* ==========================================================================
+   3. TIPOGRAFÍAS, TÍTULOS Y REGLAS DE HOVER
+   ========================================================================== */
+h2 {
+    font-size: 2.5rem;
+    font-style: italic;
+    border-left: 8px solid var(--dorado-justicia);
+    padding-left: 20px;
+    color: var(--dorado-justicia);
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+.divs:hover h2 {
+    border-left-width: 16px;
+    padding-left: 24px;
+    color: var(--dorado-justicia);
+    transform: scale(1.01);
+}
+
+.divs p {
+    background: rgba(255,255,255,0.03);
+    padding: 20px; 
+    border: 1px solid rgba(200,155,60,0.2);
+    border-radius: 4px;
+    margin-bottom: 80px;
+    line-height: 2;
+}
+
+.divs strong {
+    color: var(--dorado-justicia);
+}
+
+/* Cursores e interacciones generales */
 a,
 button,
 .menu-btn,
@@ -44,14 +125,17 @@ button,
     cursor: url('img/cursorclick-small.png') 0 0, pointer;
 }
 
-header {
-    min-height: 100vh;
+.menu-btn:hover,
+button:hover,
+a:hover,
+.habilidad-div:hover {
+    cursor: url('img/cursorclick-small.png') 0 0, pointer;
 }
 
-.container h1{
-    text-align: center; 
-}
 
+/* ==========================================================================
+   4. COMPONENTE: BARRA DE NAVEGACIÓN (NAV)
+   ========================================================================== */
 nav {
     display: flex;
     align-items: center;
@@ -65,19 +149,6 @@ nav {
     left: 0;
     width: 100%;
     border-bottom: 2px solid var(--dorado-justicia);
-}
-
-body {
-    min-height: 100vh;
-    background-color: var(--azul-demacia);
-    color: var(--blanco-pureza);
-    font-family: 'Segoe UI', sans-serif;
-    cursor: url('img/cursornormal-small.png') 0 0, auto;
-    padding-top: 80px;
-}
-
-nav .nav-links {
-    box-sizing: border-box;
 }
 
 .nav-left-text {
@@ -95,37 +166,8 @@ nav a {
     display: none;
 }
 
-.skins-section {
-        padding-bottom: 20px;
-    } 
-
-.menu-btn {
-    display: block;
-    float: right;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    position: relative;
-    z-index: 1002;
-    margin-right: 20px;
-    margin-top: 5px;
-}
-
-.menu-btn img {
-    background-color: var(--dorado-justicia);
-    width: 40px;          
-    height: auto;         
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    border-radius: 4px;
-}
-
-.menu-btn:hover img {
-    transform: scale(1.1);
-    background-color: var(--blanco-pureza);
-}
-
 nav .nav-links {
+    box-sizing: border-box;
     position: fixed;
     top: 0;
     right: 0; 
@@ -162,18 +204,38 @@ nav a:hover {
     display: inline-block;
     border-color: var(--dorado-justicia);
     transform: translateY(-5px); 
-    cursor: url('img/cursorclick-small.png') 0 0, pointer;
-     color: var(--blanco-pureza);
+    color: var(--blanco-pureza);
     text-shadow: 0 0 10px rgba(200, 155, 60, 0.5);
 }
 
-.menu-btn:hover,
-button:hover,
-a:hover,
-.habilidad-div:hover {
-    cursor: url('img/cursorclick-small.png') 0 0, pointer;
+/* Botón menú Hamburguesa */
+.menu-btn {
+    display: block;
+    float: right;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 1002;
+    margin-right: 20px;
+    margin-top: 5px;
 }
 
+.menu-btn img {
+    background-color: var(--dorado-justicia);
+    width: 40px;          
+    height: auto;         
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border-radius: 4px;
+}
+
+.menu-btn:hover img {
+    transform: scale(1.1);
+    background-color: var(--blanco-pureza);
+}
+
+/* Estados activos del Menú (JS) */
 nav.abierto .nav-links {
     transform: translateX(0);
 }
@@ -198,7 +260,13 @@ nav.abierto a {
     border: none;
 }
 
+
+/* ==========================================================================
+   5. SECCIÓN: HERO GAREN
+   ========================================================================== */
 .hero-garen {
+    width: 100%;
+    overflow: hidden;
     background-image: url('img/garen.jpg');
     background-size: cover;
     background-position: center;
@@ -221,82 +289,16 @@ nav.abierto a {
 }
 
 
-.container {
-    max-width: 1200px; 
-    margin: auto;
-    padding: 10px 20px;
-}
-
-section { 
-    padding-bottom: 100px;
-    margin-top: 80px;
-    border-bottom: 2px solid var(--dorado-justicia); 
-}
-
-h2 {
-    font-size: 2.5rem;
-    font-style: italic;
-    border-left: 8px solid var(--dorado-justicia);
-    padding-left: 20px;
-    color: var(--dorado-justicia);
-    margin-bottom: 40px;
-    transition: all 0.3s ease;
-}
-
-.divs:hover h2 {
-    border-left-width: 16px;
-    padding-left: 24px;
-    color: var(--dorado-justicia);
-    transform: scale(1.01);
-}
-
+/* ==========================================================================
+   6. SECCIÓN: HABILIDADES (GRID & COMPORTAMIENTO)
+   ========================================================================== */
 #habilidades {
     padding-bottom: 80px;
 }
+
 #habilidades p {
     line-height: 1.8;
     margin-bottom: 40px;
-}
-.habilidades-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 40px;
-}
-
-.habilidad-div { 
-    background: rgba(255,255,255,0.03);
-    padding: 30px;
-    border: 1px solid var(--dorado-justicia);
-    text-align: center;
-    border-radius: 4px;
-    transition: all 0.3s;
-    margin-bottom: 20px;
-    transform-origin: center; transition: transform 1.5s, box-shadow 1.5s; 
-}
-
-.habilidad-div { 
-    background: rgba(255,255,255,0.03);
-    padding: 20px; /* Reducimos un poco el padding para que no rompa en pantallas chicas */
-    border: 1px solid var(--dorado-justicia);
-    text-align: center;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    transform-origin: center; 
-    transition: transform 1.5s, box-shadow 1.5s; 
-    
-    /* Sistema para emparejar alturas automáticamente */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Empuja la tecla (Q, W, E, R) siempre abajo de todo */
-    height: 100%;
-    box-sizing: border-box;
-}
-
-.habilidad-div:hover {
-    background: rgba(200,155,60,0.05);
-    border-color: var(--dorado-justicia);
-    transform: translateY(-5px);
-    box-shadow: 0 0 18px rgba(200,155,60,.9);
 }
 
 #habilidades:hover h2 {
@@ -305,8 +307,34 @@ h2 {
     color: var(--dorado-justicia);
 }
 
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+}
+
+.habilidad-div { 
+    background: rgba(255,255,255,0.03);
+    padding: 20px; 
+    border: 1px solid var(--dorado-justicia);
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    transform-origin: center; 
+    transition: transform 1.5s, box-shadow 1.5s; 
+    
+    /* Centrado automático de alturas internas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%;
+    box-sizing: border-box;
+}
+
 .habilidad-div:hover {
-    transform: rotateY(360deg) scale(1.05);
+    background: rgba(200,155,60,0.05);
+    border-color: var(--dorado-justicia);
+    box-shadow: 0 0 18px rgba(200,155,60,.9);
 }
 
 .habilidad-div img {
@@ -327,6 +355,10 @@ h2 {
     margin-top: 10px;
 }
 
+
+/* ==========================================================================
+   7. SECCIÓN: BLOQUES DE INFORMACIÓN (TEXTO-FOTO ESCRITORIO)
+   ========================================================================== */
 .texto-foto-derecha {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -350,150 +382,140 @@ h2 {
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     margin-bottom: 20px;
-}
-
-.texto-foto-derecha img, 
-.texto-foto-izquierda img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border: 2px solid var(--dorado-justicia);
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
     box-sizing: border-box; 
 }
 
 
-.divs p {
-    background: rgba(255,255,255,0.03);
-    padding: 20px; 
-    border: 1px solid rgba(200,155,60,0.2);
-    border-radius: 4px;
-    margin-bottom: 80px;
-    line-height: 2;
+/* ==========================================================================
+   8. SECCIÓN: GALERÍA DE SKINS (ESCRITORIO - FIX ESPACIO VERDE)
+   ========================================================================== */
+.skins-section {
+    padding-bottom: 20px;
 }
 
-.divs strong {
+.skins-section .skins-carousel {
+    display: grid;
+    gap: 18px;
+    justify-items: center;
+    margin: auto;
+    max-width: 850px;
+    max-height: max-content; 
+    grid-template-rows: auto auto auto;
+    align-content: start;
+}
+
+.skins-display {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.skins-figure {
+    margin: 0;
+    border: 2px solid var(--dorado-justicia);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.skins-figure img {
+    margin: 0;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.skins-figure figcaption {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.skins-figure h3 {
+    margin: 20px 10px;
+    font-size: 2rem;
     color: var(--dorado-justicia);
 }
 
-    .skins-section .skins-carousel {
-        display: grid;
-        gap: 18px;
-        justify-items: center;
-        margin: auto;
-        max-width: 850px;
-        max-height: 850px;
-    }
+#skins p {
+    text-align: center;
+    margin: 20px 40px;
+}
 
-    .skins-display {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-    }
+/* Navegadores y flechas del carrusel */
+.skins-nav {
+    border: none;
+    background: rgba(200,155,60,0.95);
+    color: var(--negro-fondo);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin: 0;
+}
 
-    .skins-figure {
-        margin: 0;
-        border: 2px solid var(--dorado-justicia);
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-    }
+.skins-nav:hover {
+    background: var(--dorado-justicia);
+}
 
-    .skins-figure img {
-        margin: 0;
-        width: 100%;
-        height: 450px;
-        object-fit: cover;
-        display: block;
-    }
+/* Miniaturas con scroll de espada */
+.skins-thumbs {
+    padding-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 14px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    align-items: center;
+}
 
-    .skins-figure figcaption {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
+.skins-thumbs::-webkit-scrollbar {
+    height: 40px;
+}
 
-    .skins-figure h3 {
-        margin: 20px 10px;
-        font-size: 2rem;
-        color: var(--dorado-justicia);
-    }
+.skins-thumbs::-webkit-scrollbar-thumb {
+    background: url('img/espadascroll.png') center/cover no-repeat;
+    background-size: 60% 1000%;
+}
 
+.skins-thumb {
+    border: 2px solid transparent;
+    background: none;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+    flex: 0 0 auto;
+    min-width: 110px;
+}
 
-    .skins-nav {
-        border: none;
-        background: rgba(200,155,60,0.95);
-        color: var(--negro-fondo);
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        font-size: 1.8rem;
-        cursor: pointer;
-        margin: 0;
-    }
+.skins-thumb.active,
+.skins-thumb:hover {
+    border-color: var(--dorado-justicia);
+}
 
-    .skins-nav:hover {
-        background: var(--dorado-justicia);
-    }
-
-    .skins-thumbs {
-        padding-left: 40px;
-        margin-top: 40px;
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        gap: 14px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 10px;
-        align-items: center;
-    }
-
-    #skins p{
-        text-align: center;
-        margin: 20px 40px;
-        }
-
-    .skins-thumbs::-webkit-scrollbar {
-        height: 40px;
-    }
-
-    .skins-thumbs::-webkit-scrollbar-thumb {
-        background: url('img/espadascroll.png') center/cover no-repeat;
-        background-size: 60% 1000%;
-    }
-
-    .skins-thumb {
-        border: 2px solid transparent;
-        background: none;
-        padding: 0;
-        border-radius: 10px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: border-color 0.25s ease, transform 0.25s ease;
-        flex: 0 0 auto;
-        min-width: 110px;
-    }
-
-    .skins-thumb.active,
-    .skins-thumb:hover {
-        border-color: var(--dorado-justicia);
-    }
-
-    .skins-thumb img {
-        display: block;
-        width: 110px !important;
-        height: 70px !important;
-        object-fit: cover;
-    }
+.skins-thumb img {
+    display: block;
+    width: 110px; 
+    height: 70px; 
+    object-fit: cover;
+}
 
 
+/* ==========================================================================
+   9. SECCIÓN: MULTIMEDIA (VIDEO CONTAINER)
+   ========================================================================== */
 #video-container {
     width: 100%;
     max-width: 1000px;
@@ -501,6 +523,11 @@ h2 {
     padding: 0;
     box-sizing: border-box;
     scroll-margin-top: 120px;
+}
+
+#video-container:hover{
+
+transform: scale(1.01);
 }
 
 #video-container p {
@@ -531,40 +558,30 @@ video {
     padding: 5px;
 }
 
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    border-top: 2px solid var(--dorado-justicia);
-    color: var(--blanco-pureza);
-    font-size: 1.2rem;
-    background-color: var(--negro-fondo);
-}
-
-footer strong{
-    font-weight: bold;
-}
-
-@media (max-width: 1090px) {
-  .habilidades-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px; 
-  }
-
-  .habilidades-grid > .habilidad-div {
-    flex: 0 1 calc(33.333% - 26.66px);
-  }
-}
 
 /* ==========================================================================
-   MEDIA QUERY: TABLETS (HASTA 768px)
+   10. RESPONSIVE DESIGN - MEDIA QUERIES
    ========================================================================== */
+
+/* --- AJUSTE DE REJILLA EN LAPTOPS MEDIANAS --- */
+@media (max-width: 1090px) {
+    .habilidades-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px; 
+    }
+
+    .habilidades-grid > .habilidad-div {
+        flex: 0 1 calc(33.333% - 26.66px);
+    }
+}
+
+/* --- DISPOSITIVOS MÓVILES TIPO TABLET (HASTA 768px) --- */
 @media (max-width: 768px) {
     header {
         min-height: auto; 
+        aspect-ratio: 17 / 10; 
     }
 
     #hero {
@@ -574,10 +591,8 @@ footer strong{
         background-position: center;
         width: 100%;
         height: auto;
-        aspect-ratio: 17 / 10; 
     }
 
-    /* Mantenemos dos columnas al lado de la otra */
     .texto-foto-derecha, 
     .texto-foto-izquierda {
         display: grid;
@@ -591,7 +606,6 @@ footer strong{
         grid-template-columns: 1fr 1fr;
     }
 
-    /* Forzamos a que la imagen sea un cuadrado perfecto */
     .texto-foto-derecha img, 
     .texto-foto-izquierda img {
         width: 100%;
@@ -602,7 +616,6 @@ footer strong{
         margin-bottom: 0;
     }
 
-    /* CAMBIO CLAVE: Solo el párrafo que acompaña a la imagen se vuelve cuadrado con scroll */
     .texto-foto-derecha p,
     .texto-foto-izquierda p {
         margin: 0;
@@ -612,44 +625,97 @@ footer strong{
         line-height: 1.6;
         padding: 20px;
         box-sizing: border-box;
-        background: rgba(255,255,255,0.03); /* Mantiene tu fondo oscuro */
+        background: rgba(255,255,255,0.03); 
         border: 1px solid rgba(200,155,60,0.2);
         border-radius: 4px;
     }
 
-    /* Estilo para la barra de desplazamiento interna de estos párrafos específicos */
     .texto-foto-derecha p::-webkit-scrollbar,
     .texto-foto-izquierda p::-webkit-scrollbar {
         width: 6px;
     }
+    
     .texto-foto-derecha p::-webkit-scrollbar-thumb,
     .texto-foto-izquierda p::-webkit-scrollbar-thumb {
         background-color: var(--dorado-justicia);
         border-radius: 4px;
     }
 
-    /* Párrafos normales dentro de .divs (Como el de Skins) quedan limpios */
     .divs p {
-        margin-bottom: 40px; /* Restablece un comportamiento normal */
+        margin-bottom: 40px; 
     }
 
-    /* Resto de tus estilos de tablet sin cambios... */
-    .skins-display { display: grid; grid-template-columns: 1fr; gap: 10px; width: 100%; }
-    .skins-figure { width: 100%; }
-    .skins-figure img { height: 300px; width: 100%; }
-    .skins-nav { display: none; }
-    .skins-thumbs { padding-left: 10px; margin-top: 18px; width: 100%; gap: 10px; }
-    .skins-thumb { min-width: 90px; }
-    #justicia, #juicio { margin-left: 0; width: 100%; }
-    section { margin-top: 40px; padding-bottom: 40px; }
-    video { max-width: 90%; height: auto; }
-    .skins-thumbs::-webkit-scrollbar { height: 40px; }
-    .skins-thumbs::-webkit-scrollbar-thumb { background: url('img/espadascroll.png') center/cover no-repeat; background-size: 100% 1000%; }
-    .divs { margin-top: 20px; }
-    .habilidades-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 100%; }
-    #justicia { grid-column: span 2; }
+    .skins-display { 
+        display: grid; 
+        grid-template-columns: 1fr; 
+        gap: 10px; 
+        width: 100%; 
+    }
+    
+    .skins-figure { 
+        width: 100%; 
+    }
+    
+    .skins-figure img { 
+        height: 300px; 
+        width: 100%; 
+    }
+    
+    .skins-nav { 
+        display: none; 
+    }
+    
+    .skins-thumbs { 
+        padding-left: 10px; 
+        margin-top: 18px; 
+        width: 100%; 
+        gap: 10px; 
+    }
+    
+    .skins-thumb { 
+        min-width: 90px; 
+    }
+    
+    #justicia, 
+    #juicio { 
+        margin-left: 0; 
+        width: 100%; 
+    }
+    
+    section { 
+        margin-top: 40px; 
+        padding-bottom: 40px; 
+    }
+    
+    video { 
+        max-width: 90%; 
+        height: auto; 
+    }
+    
+    .skins-thumbs::-webkit-scrollbar { 
+        height: 40px; 
+    }
+    
+    .skins-thumbs::-webkit-scrollbar-thumb { 
+        background: url('img/espadascroll.png') center/cover no-repeat; 
+        background-size: 100% 1000%; 
+    }
+    
+    .divs { 
+        margin-top: 20px; 
+    }
+    
+    .habilidades-grid { 
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+        max-width: 100%; 
+    }
+    
+    #justicia { 
+        grid-column: span 2; 
+    }
 
-    /* Reduce el espacio extra al final de la sección Skins en tabletas */
     .skins-section {
         padding-bottom: 20px;
     }
@@ -659,9 +725,7 @@ footer strong{
     }
 }
 
-/* ==========================================================================
-   MEDIA QUERY: CELULARES (HASTA 480px)
-   ========================================================================== */
+/* --- DISPOSITIVOS MÓVILES TIPO CELULAR (HASTA 480px) --- */
 @media (max-width: 480px) {
     .texto-foto-derecha,
     .texto-foto-izquierda {
@@ -671,10 +735,9 @@ footer strong{
         margin-bottom: 30px;
     }
 
-    h2{
+    h2 {
         font-size: 2rem;
     }
-
 
     .texto-foto-derecha img, 
     .texto-foto-izquierda img {
@@ -685,7 +748,6 @@ footer strong{
         margin: 0;
     }
 
-    /* CAMBIO CLAVE: Solo el párrafo que acompaña a la imagen se vuelve cuadrado con scroll */
     .texto-foto-derecha p,
     .texto-foto-izquierda p {
         margin: 0;
@@ -705,27 +767,67 @@ footer strong{
     .texto-foto-izquierda p::-webkit-scrollbar {
         width: 4px;
     }
+    
     .texto-foto-derecha p::-webkit-scrollbar-thumb,
     .texto-foto-izquierda p::-webkit-scrollbar-thumb {
         background-color: var(--dorado-justicia);
         border-radius: 2px;
     }
 
-    /* Evitamos que afecte a otros textos sueltos en celular */
     .divs p {
         margin: 10px 0;
     }
 
-    /* Resto de tus estilos de celular sin cambios... */
-    .skins-display { grid-template-columns: 1fr; gap: 8px; }
-    .skins-figure { width: 100%; }
-    .skins-figure img { height: 220px; width: 100%; }
-    .skins-nav { display: none; }
-    .skins-thumb img { width: 86px !important; height: 56px !important; }
-    .skins-thumbs { padding-left: 6px; gap: 8px; }
-    #juicio, #justicia { margin-left: 0; width: 100%; }
-    .skins-thumbs::-webkit-scrollbar { height: 40px; }
-    .skins-thumbs::-webkit-scrollbar-thumb { background: url('img/espadascroll.png') center/cover no-repeat; background-size: 110% 800%; }
-    #skins img, #hero img { margin: 0; }
-    video { max-width: 90%; height: auto; }
+    .skins-display { 
+        grid-template-columns: 1fr; 
+        gap: 8px; 
+    }
+    
+    .skins-figure { 
+        width: 100%; 
+    }
+    
+    .skins-figure img { 
+        height: 220px; 
+        width: 100%; 
+    }
+    
+    .skins-nav { 
+        display: none; 
+    }
+    
+    .skins-thumb img { 
+        width: 86px; 
+        height: 56px; 
+    }
+    
+    .skins-thumbs { 
+        padding-left: 6px; 
+        gap: 8px; 
+    }
+    
+    #juicio, 
+    #justicia { 
+        margin-left: 0; 
+        width: 100%; 
+    }
+    
+    .skins-thumbs::-webkit-scrollbar { 
+        height: 40px; 
+    }
+    
+    .skins-thumbs::-webkit-scrollbar-thumb { 
+        background: url('img/espadascroll.png') center/cover no-repeat; 
+        background-size: 110% 800%; 
+    }
+    
+    #skins img, 
+    #hero img { 
+        margin: 0; 
+    }
+    
+    video { 
+        max-width: 90%; 
+        height: auto; 
+    }
 }
